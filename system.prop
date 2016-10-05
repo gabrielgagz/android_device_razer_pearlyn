@@ -7,6 +7,18 @@ persist.demo.hdmirotationlock=false
 # Model Group
 ro.nrdp.modelgroup=FORGETV
 
+# Bluetooth
+ro.bluetooth.hfp.ver=1.6
+ro.qualcomm.bluetooth.opp=true
+ro.qualcomm.bluetooth.ftp=true
+ro.qualcomm.bluetooth.nap=false
+ro.bluetooth.sap=false
+ro.bluetooth.dun=false
+ro.qualcomm.bluetooth.hsp=false
+ro.qualcomm.bluetooth.hfp=false
+ro.qualcomm.bluetooth.pbap=true
+ro.qualcomm.bluetooth.map=true
+
 # Stagefright
 media.stagefright.less-secure=true 
 media.stagefright.enable-player=true
