@@ -29,6 +29,7 @@ mm.enable.qcom_parser=3183219
 persist.mm.enable.prefetch=true
 debug.enable.sglscale=1
 persist.media.treble_omx=false
+debug.hwui.use_buffer_age=false
 
 # Audio
 ro.qc.sdk.audio.fluencetype=none
