@@ -199,6 +199,10 @@ PRODUCT_COPY_FILES += \
 # Without this filter, we get very close to the limit.
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space
 
+# Dexopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI
+
 # Bootanimation
 TARGET_SCREEN_WIDTH := 1920
 TARGET_SCREEN_HEIGHT := 1080
