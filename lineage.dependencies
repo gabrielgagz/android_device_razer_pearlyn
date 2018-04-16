@@ -2,9 +2,5 @@
  {
    "repository": "android_kernel_razer_pearlyn",
    "target_path": "kernel/razer/pearlyn"
- },
-  {
-   "repository": "android_device_qcom_common",
-   "target_path": "device/qcom/common"
  }
 ]
