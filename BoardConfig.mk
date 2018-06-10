@@ -73,3 +73,6 @@ BOARD_USES_ES705 := true
 
 # Snapdragon LLVM Compiler
 TARGET_USE_SDCLANG := true
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := APQ8084
