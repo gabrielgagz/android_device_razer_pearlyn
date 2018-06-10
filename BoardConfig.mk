@@ -51,3 +51,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # HDMI
 TARGET_HAVE_HDMI_OUT := true
 TARGET_USE_HDMI_AS_PRIMARY := true
+
+# inherit from the proprietary version
+-include vendor/razer/pearlyn/BoardConfigVendor.mk
