@@ -54,3 +54,7 @@ TARGET_USE_HDMI_AS_PRIMARY := true
 
 # inherit from the proprietary version
 -include vendor/razer/pearlyn/BoardConfigVendor.mk
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_HAS_QCA_BT_ROME := true
