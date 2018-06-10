@@ -11,3 +11,5 @@
 # limitations under the License.
 
 TARGET_OTA_ASSERT_DEVICE := pearlyn
+
+DEVICE_PATH := device/razer/pearlyn
