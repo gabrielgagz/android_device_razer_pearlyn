@@ -168,7 +168,14 @@ PRODUCT_PACKAGES += \
 	tinyplay
 	
 # Without this filter, we get very close to the limit.
-PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space	            
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space
+
+# Bootanimation
+TARGET_SCREEN_WIDTH := 1920
+TARGET_SCREEN_HEIGHT := 1080
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true        
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
