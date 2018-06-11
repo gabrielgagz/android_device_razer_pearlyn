@@ -115,7 +115,11 @@ PRODUCT_PACKAGES += \
     hwcomposer.apq8084 \
     hdmi_cec.apq8084 \
     lights.apq8084 \
-    memtrack.apq8084   
+    memtrack.apq8084
+    
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.apq8084    
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
