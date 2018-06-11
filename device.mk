@@ -119,7 +119,15 @@ PRODUCT_PACKAGES += \
     
 # Keystore
 PRODUCT_PACKAGES += \
-    keystore.apq8084    
+    keystore.apq8084
+    
+# Wifi   
+PRODUCT_PACKAGES += \
+    WCNSS_qcom_cfg.ini \
+    WCNSS_qcom_wlan_nv.bin \
+    wlan_mac.bin \
+    wlan_mac_serial.bin \
+    qca_cld_wlan.ko        
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
