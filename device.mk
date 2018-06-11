@@ -22,5 +22,9 @@ $(call inherit-product-if-exists, vendor/google/atv/atv-common.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay
 
+PRODUCT_AAPT_CONFIG := large xlarge
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_CHARACTERISTICS := nosdcard,tv
+
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
