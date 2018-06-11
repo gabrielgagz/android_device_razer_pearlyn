@@ -37,6 +37,7 @@ PRODUCT_COPY_FILES += \
     
 # Media
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
