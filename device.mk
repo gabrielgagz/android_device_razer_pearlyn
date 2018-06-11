@@ -100,7 +100,22 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    tinymix    	   
+    tinymix
+    
+ # Display
+PRODUCT_PACKAGES += \
+	libqdutils \
+	libc2dcolorconvert \
+	libmm-omxcore \
+	libstagefrighthw \
+	liboverlay \
+	libqservice \
+	libvirtual \
+    gralloc.apq8084 \
+    hwcomposer.apq8084 \
+    hdmi_cec.apq8084 \
+    lights.apq8084 \
+    memtrack.apq8084   
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
