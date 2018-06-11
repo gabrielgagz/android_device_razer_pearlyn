@@ -38,9 +38,16 @@ PRODUCT_COPY_FILES += \
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/media/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/media/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/media/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
+    $(LOCAL_PATH)/media/listen_platform_info.xml:system/etc/listen_platform_info.xml \
+    $(LOCAL_PATH)/media/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
+    $(LOCAL_PATH)/media/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/media/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
