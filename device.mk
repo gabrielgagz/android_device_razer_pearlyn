@@ -35,6 +35,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/Nexus_Remote.kl:system/usr/keylayout/Nexus_Remote.kl \
     $(LOCAL_PATH)/keylayout/Vendor_2836_Product_0001.kl:system/usr/keylayout/Vendor_2836_Product_0001.kl
     
+# Bluetooth
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bluetooth/auto_pair_devlist.conf:system/etc/auto_pair_devlist.conf \
+    $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bt_did.conf \
+    $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bt_stack.conf
+    
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
