@@ -81,7 +81,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	net.bt.name=Forge \
 	dalvik.vm.dex2oat-swap=false \
 	ro.product.first_api_level=22 \
-	ro.com.google.clientidbase=android-pearlyn       
+	ro.com.google.clientidbase=android-pearlyn
+	
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.apq8084	   
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
