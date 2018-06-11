@@ -127,7 +127,45 @@ PRODUCT_PACKAGES += \
     WCNSS_qcom_wlan_nv.bin \
     wlan_mac.bin \
     wlan_mac_serial.bin \
-    qca_cld_wlan.ko        
+    qca_cld_wlan.ko
+    
+# DEPS: libs
+PRODUCT_PACKAGES += \
+    libcurl \
+	libion \
+	libOmxAacEnc \
+	libOmxAmrEnc \
+	libOmxCore \
+	libOmxEvrcEnc \
+	libOmxQcelp13Enc \
+	libOmxVdec \
+	libOmxVdpp \
+	libOmxVenc \
+	libQWiFiSoftApCfg \
+	librmnetctl \
+	libtinyxml2 \
+	libtinyxml \
+	libwifi-hal-qcom \
+	libcommon_time_client \
+	libjhead_jni \
+	libjhead \
+	libsqlite_jni \
+	libxml2
+	
+# DEPS: binaries
+PRODUCT_PACKAGES += \
+	cplay \
+	hostapd \
+	mm-vdec-omx-test \
+	mm-venc-omx-test720p \
+	mm-video-driver-test \
+	mm-video-encdrv-test \
+	msm-vidc-test \
+	rmnetcli \
+	setup_fs \
+	tinycap \
+	tinypcminfo \
+	tinyplay            
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
