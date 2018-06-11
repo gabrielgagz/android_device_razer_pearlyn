@@ -1,1 +1,5 @@
-
+# HDMI
+ro.hdmi.enable=true
+ro.hdmi.device_type=4
+persist.sys.hdmi.addr.playback=4
+persist.demo.hdmirotationlock=false
