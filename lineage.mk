@@ -10,3 +10,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+$(call inherit-product, device/razer/pearlyn/full_pearlyn.mk)
+
+# Inherit common CM TV device.
+$(call inherit-product, vendor/cm/config/common_full_tv.mk)
