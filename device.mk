@@ -19,5 +19,8 @@ $(call inherit-product, device/google/atv/products/atv_base.mk)
 # Get non-open-source specific aspects for atv
 $(call inherit-product-if-exists, vendor/google/atv/atv-common.mk)
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay
+
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
