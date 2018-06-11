@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2009, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds.  Do not translate. -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- Set UI into TV Mode -->
+    <integer name="config_defaultUiModeType">4</integer>
+    <bool name="config_lockUiMode">true</bool>
+     <!-- Apps that are authorized to access shared accounts -->
+    <string name="config_appsAuthorizedForSharedAccounts">;com.android.vending;com.android.settings;com.android.tv.settings;</string>
+    <!-- Override configuration check for dpad so that we always appear to have one -->
+    <bool name="config_hasPermanentDpad">true</bool>
+    <!-- This device does not allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
+    <!-- Flag indicating that the media framework should support playing of sounds on volume
+         key usage.  This adds noticeable additional overhead to volume key processing, so
+         is disableable for products for which it is irrelevant. -->
+    <bool name="config_useVolumeKeySounds">false</bool>
+    <!-- Disable AUDIO_BECOMING_NOISY notifications. -->
+    <bool name="config_sendAudioBecomingNoisy">false</bool>
+    <!-- Use android tv account activity -->
+   <string name="config_chooseAccountActivity">com.google.android.gms/.common.account.NoTouchAccountPickerActivity</string>
+   <string name="config_chooseTypeAndAccountActivity">com.google.android.gms/.common.account.NoTouchAccountPickerActivity</string>
+    <!-- Wifi Dual Band support -->
+   <bool name="config_wifi_dual_band_support">true</bool>    
+  <!-- Wifi background scan support -->
+  <bool name="config_wifi_background_scan_support">true</bool>
+    <bool name="config_voice_capable">false</bool> 
+    <!-- Set brightness to max value --> 
+    <integer name="config_screenBrightnessSettingDefault">255</integer>
+    <integer name="config_screenBrightnessSettingMinimum">255</integer>
+     <!-- Support for Bluetooth LE --> 
+    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
+    <bool name="single_hand_mode">false</bool>
+    <bool name="config_enableWifiDisplay">true</bool>
+    <!-- Flag indicating which package name can access the persistent data partition -->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+</resources>
