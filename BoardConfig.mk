@@ -137,3 +137,8 @@ WITH_LZMA_OTA:= true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+
+# TWRP (optional)
+ifeq ($(WITH_TWRP),true)
+ -include device/razer/pearlyn/twrp.mk
+endif
