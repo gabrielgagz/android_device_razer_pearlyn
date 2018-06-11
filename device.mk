@@ -85,7 +85,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.apq8084	   
+    power.apq8084
+    
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audiod \
+    audio_policy.apq8084 \
+    audio.primary.apq8084 \
+    audio.r_submix.default \
+    libaudioroute \
+    audio.usb.default \
+    libaudio-resampler \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    tinymix    	   
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
