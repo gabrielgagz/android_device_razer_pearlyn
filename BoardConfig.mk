@@ -127,3 +127,7 @@ BOARD_USES_QC_TIME_SERVICES := true
  
 # Enable dex-preoptimization to speed up first boot sequence
 WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+
+# DRM Protected Video
+BOARD_USES_LIBDRM := true
+BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
