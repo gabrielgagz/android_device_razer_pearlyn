@@ -10,5 +10,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Lang
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
