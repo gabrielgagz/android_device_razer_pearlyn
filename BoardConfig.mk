@@ -134,3 +134,6 @@ BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
 
 # LZMA compression
 WITH_LZMA_OTA:= true
+
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
