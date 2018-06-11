@@ -165,7 +165,10 @@ PRODUCT_PACKAGES += \
 	setup_fs \
 	tinycap \
 	tinypcminfo \
-	tinyplay            
+	tinyplay
+	
+# Without this filter, we get very close to the limit.
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space	            
     
 # twrp
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
