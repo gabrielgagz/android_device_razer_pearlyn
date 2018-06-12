@@ -61,3 +61,6 @@ persist.fuse_sdcard=true
 
 # Drm
 drm.service.enabled=true
+
+# Qualcomm
+ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
