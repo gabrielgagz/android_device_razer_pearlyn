@@ -58,6 +58,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bt_did.conf \
     $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bt_stack.conf
     
+# LeanbackCustomize
+PRODUCT_PACKAGES += \
+	LeanbackCustomize
+    
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -82,7 +86,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/permissions/com.quicinc.cne.xml:system/etc/permissions/com.quicinc.cne.xml \
     $(LOCAL_PATH)/etc/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
     $(LOCAL_PATH)/etc/permissions/nrdp.modelgroup.xml:system/etc/permissions/nrdp.modelgroup.xml
-    
         
 # Wifi Config
 PRODUCT_COPY_FILES += \
