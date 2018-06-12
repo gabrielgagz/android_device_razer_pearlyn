@@ -40,3 +40,21 @@ use.voice.path.for.pcm.voip=true
 audio.offload.gapless.enabled=true
 qcom.hw.aac.encoder=true
 media.aac_51_output_enabled=true
+
+# Hardware
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+persist.timed.enable=true
+ro.qualcomm.cabl=0
+ro.lockscreen.disable.default=1
+qcom.bluetooth.soc=rome
+persist.fuse_sdcard=true
