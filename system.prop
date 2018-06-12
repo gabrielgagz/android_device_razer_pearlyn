@@ -4,6 +4,9 @@ ro.hdmi.device_type=4
 persist.sys.hdmi.addr.playback=4
 persist.demo.hdmirotationlock=false
 
+# Model Group
+ro.nrdp.modelgroup=FORGETV
+
 # Stagefright
 media.stagefright.less-secure=true 
 media.stagefright.enable-player=true
