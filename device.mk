@@ -35,6 +35,28 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/Nexus_Remote.kl:system/usr/keylayout/Nexus_Remote.kl \
     $(LOCAL_PATH)/keylayout/Vendor_2836_Product_0001.kl:system/usr/keylayout/Vendor_2836_Product_0001.kl
     
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.class_main.sh \
+    init.mdm.sh \
+    init.qcom.class_core.sh \
+    init.pearlyn.diag.rc \
+    init.qcom.early_boot.sh \
+    init.qcom.factory.sh \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.ssr.sh \
+    init.qcom.syspart_fixup.sh \
+    init.razer.info.sh \
+    init.razer.peripherals.sh \
+    init.razer.rc \
+    init.target.rc \
+    init.razer.usb.rc \
+    init.razer.usb.sh \
+    init.trace.rc \
+    ueventd.qcom.rc    
+    
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/mixer_paths.xml:system/etc/mixer_paths.xml \
