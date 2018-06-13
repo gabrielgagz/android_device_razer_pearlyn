@@ -116,6 +116,7 @@ on boot
     chown system system /sys/class/leds/torch-light/brightness
 
 on property:sys.boot_completed=1
+	swapon_all fstab.qcom
     start mpdecision
 
 # Allow usb charging to be disabled peristently
