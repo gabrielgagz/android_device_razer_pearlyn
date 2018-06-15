@@ -80,6 +80,28 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bt_did.conf \
     $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bt_stack.conf
     
+# Sys Init
+PRODUCT_PACKAGES += \
+    hcidump.sh \
+    hsic.control.bt.sh \
+    init.ath3k.bt.sh \
+    init.crda.sh \
+    init.qcom.audio.sh \
+    init.qcom.bt.sh \
+    init.qcom.coex.sh \
+    init.qcom.efs.sync.sh \
+    init.qcom.fm.sh \
+    init.qcom.modem_links.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sdio.sh \
+    init.qcom.wifi.sh \
+    qca6234-service.sh \
+    usf_post_boot.sh \
+    sec_config \
+    valiService.conf\
+    vold.fstab \
+    usf_post_boot.sh    
+    
 # LeanbackCustomize
 PRODUCT_PACKAGES += \
 	LeanbackCustomize
