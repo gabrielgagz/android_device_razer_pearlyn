@@ -137,6 +137,7 @@ WITH_LZMA_OTA:= true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+LZMA_RAMDISK_TARGETS := recovery
 
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
