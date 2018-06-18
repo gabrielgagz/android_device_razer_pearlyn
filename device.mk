@@ -16,6 +16,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Include atv base
 $(call inherit-product, device/google/atv/products/atv_base.mk)
 
+# Get non-open-source specific aspects for pearlyn
+$(call inherit-product-if-exists, vendor/razer/pearlyn/pearlyn-vendor.mk)
+
 # Get non-open-source specific aspects for atv
 $(call inherit-product-if-exists, vendor/google/atv/atv-common.mk)
 
