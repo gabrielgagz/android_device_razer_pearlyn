@@ -105,9 +105,10 @@ PRODUCT_PACKAGES += \
     vold.fstab \
     usf_post_boot.sh    
     
-# LeanbackCustomize
+# LeanbackCustomize & PearlynActions
 PRODUCT_PACKAGES += \
-	LeanbackCustomize
+	LeanbackCustomize \
+	PearlynActions
     
 # Permissions
 PRODUCT_COPY_FILES += \
