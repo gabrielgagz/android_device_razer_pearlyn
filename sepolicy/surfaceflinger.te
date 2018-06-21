@@ -1,0 +1,15 @@
+set_prop(surfaceflinger, hdmi_prop)
+
+allow surfaceflinger kernel:system module_request;
+allow surfaceflinger sysfs:file write;
+allow surfaceflinger debugfs_tracing:dir search;
+allow surfaceflinger debugfs_trace_marker:file { open write };
+allow surfaceflinger zygote:binder { call transfer };
+allow surfaceflinger zygote:fd use;
+
+#debugfs access
+userdebug_or_eng(`
+typeattribute surfaceflinger qti_debugfs_domain;
+allow surfaceflinger debugfs:dir r_dir_perms;
+allow surfaceflinger debugfs:file rw_file_perms;
+')

@@ -1,0 +1,11 @@
+allow mediacodec kernel:system module_request;
+allow mediacodec debugfs_tracing:dir search;
+allow mediacodec debugfs_trace_marker:file { open write };
+allow mediacodec mpctl_socket:dir search;
+
+#debugfs access
+userdebug_or_eng(`
+typeattribute mediacodec qti_debugfs_domain;
+allow mediacodec debugfs:dir r_dir_perms;
+allow mediacodec debugfs:file rw_file_perms;
+')

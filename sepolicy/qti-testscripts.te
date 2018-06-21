@@ -1,0 +1,2 @@
+allow qti-testscripts kernel:system module_request;
+allow qti-testscripts shell_exec:file { entrypoint getattr read };

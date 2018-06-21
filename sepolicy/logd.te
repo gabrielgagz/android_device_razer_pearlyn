@@ -1,0 +1,5 @@
+allow logd kernel:system module_request;
+allow logd razer-periph-sh:dir search;
+allow logd razer-periph-sh:file { open read };
+allow logd razer-info-sh:dir search;
+allow logd razer-info-sh:file { open read };

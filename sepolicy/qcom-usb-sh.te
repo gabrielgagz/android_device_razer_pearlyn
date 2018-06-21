@@ -1,0 +1,31 @@
+type qcom-usb-sh, domain, domain_deprecated;
+
+
+allow qcom-usb-sh default_prop:file read;
+allow qcom-usb-sh device:dir search;
+allow qcom-usb-sh init:fd use;
+allow qcom-usb-sh kernel:system module_request;
+allow qcom-usb-sh null_device:chr_file { read write };
+allow qcom-usb-sh proc:lnk_file read;
+allow qcom-usb-sh properties_device:dir getattr;
+allow qcom-usb-sh properties_serial:file { getattr open read };
+allow qcom-usb-sh property_contexts:file { getattr open read };
+allow qcom-usb-sh rootfs:lnk_file { getattr read };
+allow qcom-usb-sh self:dir search;
+allow qcom-usb-sh self:lnk_file read;
+allow qcom-usb-sh shell_exec:file { entrypoint getattr read };
+allow qcom-usb-sh sysfs:dir search;
+allow qcom-usb-sh sysfs_devices_system_cpu:dir search;
+allow qcom-usb-sh sysfs_devices_system_cpu:file { getattr open read };
+allow qcom-usb-sh system_file:dir getattr;
+allow qcom-usb-sh system_file:file { execute getattr open read };
+allow qcom-usb-sh system_prop:property_service set;
+allow qcom-usb-sh urandom_device:chr_file { getattr ioctl open read };
+allow qcom-usb-sh init:unix_stream_socket connectto;
+allow qcom-usb-sh property_socket:sock_file write;
+allow qcom-usb-sh rootfs:file { open read };
+allow qcom-usb-sh sysfs:file { open write };
+allow qcom-usb-sh sysfs_hsic:dir search;
+allow qcom-usb-sh sysfs_hsic:file { open write };
+allow qcom-usb-sh toolbox_exec:file { execute execute_no_trans getattr open read };
+allow qcom-usb-sh rootfs:file entrypoint;

@@ -1,0 +1,8 @@
+allow shell ctl_default_prop:property_service set;
+
+#debugfs access
+userdebug_or_eng(`
+typeattribute shell qti_debugfs_domain;
+allow shell debugfs:dir r_dir_perms;
+allow shell debugfs:file rw_file_perms;
+')

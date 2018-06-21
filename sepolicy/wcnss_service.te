@@ -1,0 +1,2 @@
+allow wcnss_service self:capability { setgid setuid };
+allow wcnss_service wifi_nv_owner_prop:property_service set;

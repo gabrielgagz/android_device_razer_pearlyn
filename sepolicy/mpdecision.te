@@ -1,0 +1,7 @@
+type_transition mpdecision system_data_file:file mpctl_data_file;
+
+allow mpdecision socket_device:dir { add_name write };
+allow mpdecision socket_device:sock_file { create setattr };
+allow mpdecision qualcomm_perf_cores_prop:file { open read getattr };
+allow mpdecision data_default_values:file { getattr append open read };
+allow mpdecision system_data_file:dir { write add_name };

@@ -1,0 +1,11 @@
+allow bootanim kernel:system module_request;
+allow bootanim debugfs_tracing:dir search;
+allow bootanim debugfs_trace_marker:file { open write };
+allow bootanim surfaceflinger:fifo_file rw_file_perms;
+
+#debugfs access
+userdebug_or_eng(`
+typeattribute bootanim qti_debugfs_domain;
+allow bootanim debugfs:dir r_dir_perms;
+allow bootanim debugfs:file rw_file_perms;
+')

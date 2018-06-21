@@ -1,0 +1,9 @@
+# allow tee block_device:blk_file { open read write };
+allow tee init:unix_stream_socket connectto;
+allow tee kernel:system module_request;
+allow tee property_socket:sock_file write;
+allow tee self:capability { setgid setuid sys_rawio };
+allow tee system_prop:property_service set;
+allow tee tee_device:blk_file { getattr ioctl open read write };
+allow tee unlabeled:dir { getattr open read search };
+allow tee unlabeled:file { getattr open read write };

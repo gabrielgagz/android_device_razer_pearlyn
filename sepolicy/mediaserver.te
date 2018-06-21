@@ -1,0 +1,1 @@
+allow mediaserver kernel:system module_request;

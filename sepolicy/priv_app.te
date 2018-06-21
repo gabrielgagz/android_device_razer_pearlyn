@@ -1,0 +1,10 @@
+allow priv_app device:dir { open read };
+allow priv_app kernel:system module_request;
+allow priv_app system_app_data_file:dir getattr;
+allow priv_app cache_private_backup_file:dir getattr;
+allow priv_app debugfs_tracing:dir search;
+allow priv_app debugfs_trace_marker:file { open write };
+allow priv_app razerdate_exec:lnk_file getattr;
+allow priv_app zygote:binder call;
+allow priv_app zygote:binder transfer;
+allow priv_app hwui_prop:file read;

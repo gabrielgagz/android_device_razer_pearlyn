@@ -1,0 +1,12 @@
+# Razer services properties
+rzr.drm                    		    u:object_r:rzrdrm_prop:s0
+rzr.pearlyn               		    u:object_r:razer_prop:s0
+persist.sys.rzr						u:object_r:persist_sys_rzr:s0
+ctl.ctrlled							u:object_r:ctl_default_prop:s0
+ctl.beamservice						u:object_r:ctl_default_prop:s0
+
+# Other properties
+persist.hdmi.     			        u:object_r:hdmi_prop:s0
+wifi.change_nv_owner       		    u:object_r:wifi_nv_owner_prop:s0
+ro.radio.noril             		    u:object_r:radio_noril_prop:s0
+ro.qualcomm.perf.cores_online       u:object_r:qualcomm_perf_cores_prop:s0

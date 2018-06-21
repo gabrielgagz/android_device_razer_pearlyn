@@ -1,0 +1,3 @@
+allow mediadrmserver kernel:system module_request;
+allow mediadrmserver gpu_device:chr_file { read write };
+allow mediadrmserver video_device:chr_file { read write };

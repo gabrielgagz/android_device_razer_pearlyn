@@ -1,0 +1,1 @@
+allow mdnsd kernel:system module_request;

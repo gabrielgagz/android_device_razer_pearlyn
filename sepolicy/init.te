@@ -1,0 +1,18 @@
+allow init kmsg_device:chr_file write;
+allow init qti-testscripts:process { noatsecure rlimitinh siginh transition };
+allow init razerdate_exec:lnk_file read;
+allow init debugfs_trace_marker:file { open write };
+allow init diag_device:chr_file unlink;
+allow init sysfs_mpdecision:file getattr;
+
+#debugfs access
+userdebug_or_eng(`
+typeattribute init qti_debugfs_domain;
+allow init debugfs:dir mounton;
+allow init debugfs:dir r_dir_perms;
+allow init debugfs:file rw_file_perms;
+')
+
+domain_trans(init, rootfs, razer-periph-sh)
+domain_trans(init, rootfs, razer-info-sh)
+domain_trans(init, rootfs, qcom-usb-sh)

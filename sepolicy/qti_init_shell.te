@@ -1,0 +1,9 @@
+allow qti_init_shell bluetooth_data_file:file getattr;
+allow qti_init_shell bluetooth_loader_exec:file { open read };
+allow qti_init_shell btnvtool_exec:file { execute execute_no_trans getattr open read };
+allow qti_init_shell cgroup:dir create;
+allow qti_init_shell sysfs_devices_system_cpu:file setattr;
+allow qti_init_shell radio_noril_prop:property_service set;
+allow qti_init_shell qualcomm_perf_cores_prop:property_service set;
+allow qti_init_shell sysfs_hsic:dir search;
+allow qti_init_shell sysfs_hsic:file { open write };

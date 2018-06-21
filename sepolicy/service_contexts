@@ -1,0 +1,2 @@
+beamservice                               u:object_r:beam_service:s0
+ctrlled 	                              u:object_r:ctrlled_service:s0

@@ -1,0 +1,2 @@
+type beam_service, service_manager_type;
+type ctrlled_service, service_manager_type;
