@@ -251,5 +251,7 @@ TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true        
     
-# twrp
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab 
+# TWRP (optional)
+ifeq ($(WITH_TWRP),true)
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp/twrp.fstab:recovery/root/etc/twrp.fstab
+endif
