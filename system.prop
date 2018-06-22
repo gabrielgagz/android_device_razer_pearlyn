@@ -69,3 +69,6 @@ drm.service.enabled=true
 
 # Qualcomm
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
+
+# UI
+sys.use_fifo_ui=1
