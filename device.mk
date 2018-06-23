@@ -195,14 +195,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keystore.apq8084
     
-# Wifi   
-PRODUCT_PACKAGES += \
-    WCNSS_qcom_cfg.ini \
-    WCNSS_qcom_wlan_nv.bin \
-    wlan_mac.bin \
-    wlan_mac_serial.bin \
-    qca_cld_wlan.ko
-    
 # DEPS: libs
 PRODUCT_PACKAGES += \
     libcurl \
