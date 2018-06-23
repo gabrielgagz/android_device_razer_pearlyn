@@ -13,22 +13,22 @@
      limitations under the License.
 -->
 
-<manifest android:versionCode="1" android:versionName="1.0" package="com.cyanogenmod.pearlynactions" platformBuildVersionCode="25" platformBuildVersionName="7.1.2"
+<manifest android:versionCode="1" android:versionName="1.0" package="com.cyanogenmod.pearlynled" platformBuildVersionCode="25" platformBuildVersionName="7.1.2"
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:sharedUserId="android.uid.system"
   coreApp="true">
  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
  <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
         <application android:label="@string/app_name"
-					 android:icon="@drawable/ic_pearlynactions"
+					 android:icon="@drawable/ic_pearlynled"
 					 android:persistent="true" >
-		<receiver android:name="com.cyanogenmod.pearlynactions.BootCompletedReceiver">
+		<receiver android:name="com.cyanogenmod.pearlynled.BootCompletedReceiver">
 		<intent-filter>
 			<action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
         </receiver>
   
-		<service android:name="com.cyanogenmod.pearlynactions.PearlynActionsService"
+		<service android:name="com.cyanogenmod.pearlynled.PearlynLedService"
         android:enabled="true"
         android:exported="true">
         </service>

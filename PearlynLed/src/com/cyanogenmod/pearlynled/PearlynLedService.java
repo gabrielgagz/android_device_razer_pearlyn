@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.pearlynactions;
+package com.cyanogenmod.pearlynled;
  
 import android.app.Service;
 import android.content.Intent;
@@ -22,7 +22,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.content.BroadcastReceiver;
 
-public class PearlynActionsService extends Service {
+public class PearlynLedService extends Service {
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -45,8 +45,8 @@ public class PearlynActionsService extends Service {
 		return super.onStartCommand(intent, flags, startId);
 		}
 	public class LocalBinder extends Binder {
-		PearlynActionsService getService() {
-		return PearlynActionsService.this;
+		PearlynLedService getService() {
+		return PearlynLedService.this;
 		}
 	}
 }

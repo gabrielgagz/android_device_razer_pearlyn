@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.pearlynactions;
+package com.cyanogenmod.pearlynled;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -29,19 +29,19 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent intent) {
 		// Start the service on boot
 		if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
-            Intent serviceIntent = new Intent(context, PearlynActionsService.class);
+            Intent serviceIntent = new Intent(context, PearlynLedService.class);
             context.startService(serviceIntent);
-            Log.i("LedPearlyn","Started");
+            Log.i("PearlynLed","Started");
         // Shutdown the led if device goes to Daydream or Sleep   
         } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF) || intent.getAction().equals(Intent.ACTION_DREAMING_STARTED)) {
 			writeledvalue("1");
             wasScreenOn = false;
-            Log.i("LedPearlyn","Off"); 
+            Log.i("PearlynLed","Off"); 
         // Set the brightness to max if the devices wakes up from sleep or Daydream    
         } else if (intent.getAction().equals(Intent.ACTION_SCREEN_ON) || intent.getAction().equals(Intent.ACTION_DREAMING_STOPPED)) {
 			writeledvalue("255"); 
             wasScreenOn = true;
-            Log.i("LedPearlyn","On");
+            Log.i("PearlynLed","On");
         } 
     }
     
