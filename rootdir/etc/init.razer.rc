@@ -1,12 +1,5 @@
 import init.pearlyn.diag.rc
 
-service razer-periph-sh /init.razer.peripherals.sh
-   class late_start
-   user root
-   disabled
-   oneshot
-   seclabel u:r:razer-periph-sh:s0
-
 service razer-info-sh /init.razer.info.sh
    class late_start
    user root
@@ -30,9 +23,16 @@ on fs
 
 # on property:dev.bootcomplete=1
 on boot
-    start razer-periph-sh
     start razer-info-sh
     start valiService
 
 on property:dev.bootcomplete=1
     start razer-info-sh
+
+on property:persist.service.adb.enable=1
+	write /proc/usb_device 0
+	setprop persist.sys.rzr.device_mode 0
+	
+on property:persist.service.adb.enable=0
+	write /proc/usb_device 1
+	setprop persist.sys.rzr.device_mode 1	
