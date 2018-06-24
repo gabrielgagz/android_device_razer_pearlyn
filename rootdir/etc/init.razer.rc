@@ -1,6 +1,7 @@
 service razer-info-sh /init.razer.info.sh
    class late_start
-   user root
+   user system
+   group system
    disabled
    oneshot
    seclabel u:r:razer-info-sh:s0
