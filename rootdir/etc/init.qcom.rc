@@ -51,8 +51,6 @@ on early-boot
     exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
 
 on boot
-# gabrielgagz addition: Give pearlyn led brightness file system attributes
-	chown system system /sys/devices/leds-qpnp-e6f58400/leds/pearlyn/brightness
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -170,12 +168,6 @@ on boot
     # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
     write /proc/sys/kernel/printk "6 6 1 7"
-    
-# gabrielgagz tweaks
-    write /sys/block/mmcblk0/queue/scheduler fiops
-    setprop service.adb.tcp.port 5555		
- 	stop adbd		
- 	start adbd
 
 # msm specific files that need to be created on /data
 on post-fs-data
