@@ -1,5 +1,3 @@
-import init.pearlyn.diag.rc
-
 service razer-info-sh /init.razer.info.sh
    class late_start
    user root
@@ -35,4 +33,9 @@ on property:persist.service.adb.enable=1
 	
 on property:persist.service.adb.enable=0
 	write /proc/usb_device 1
-	setprop persist.sys.rzr.device_mode 1	
+	setprop persist.sys.rzr.device_mode 1
+	
+on property:ro.build.type=user
+    rm /dev/diag	
+	
+	

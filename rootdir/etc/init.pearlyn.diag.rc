@@ -1,3 +1,0 @@
-# This file gets copied as /init.razer.diag.rc
-on property:ro.build.type=user
-    rm /dev/diag
