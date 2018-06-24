@@ -3,7 +3,6 @@ allow zygote debugfs:file { getattr };
 allow zygote kernel:system module_request;
 allow zygote mnt_expand_file:dir getattr;
 allow zygote node:tcp_socket node_bind;
-allow zygote self:capability sys_nice;
 allow zygote self:process execmem;
 allow zygote self:tcp_socket { bind create getattr listen setopt };
 allow zygote servicemanager:binder call;
