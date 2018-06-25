@@ -20,7 +20,6 @@ on fs
     # Set a default date
     start razerdate
 
-# on property:dev.bootcomplete=1
 on boot
     start razer-info-sh
     start valiService

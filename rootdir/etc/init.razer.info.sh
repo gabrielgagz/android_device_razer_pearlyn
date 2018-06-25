@@ -78,8 +78,3 @@ fi
 /system/bin/razerdrmcheck
 val=`getprop rzr.drm.check`
 logi "drm status $val"
-
-#if [ -f /system/bin/valiService ]; then
-#    logi "ValiService is present, lets begin the process"
-#    start valiService
-#fi
