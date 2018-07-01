@@ -23,4 +23,5 @@
     <integer name="def_screen_brightness">255</integer>
     <bool name="def_dim_screen">false</bool>
     <bool name="def_backup_enabled">true</bool>
+    <bool name="def_lockscreen_disabled">true</bool>
 </resources>
