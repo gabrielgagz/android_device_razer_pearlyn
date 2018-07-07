@@ -27,13 +27,13 @@ on boot
 on property:dev.bootcomplete=1
     start razer-info-sh
 
-on property:persist.service.adb.enable=1
+on property:persist.sys.rzr.device_mode=0
 	write /proc/usb_device 0
-	setprop persist.sys.rzr.device_mode 0
+	start adbd
 	
-on property:persist.service.adb.enable=0
+on property:persist.sys.rzr.device_mode=1
 	write /proc/usb_device 1
-	setprop persist.sys.rzr.device_mode 1
+	stop adbd
 	
 on property:ro.build.type=user
     rm /dev/diag	
