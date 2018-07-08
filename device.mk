@@ -52,7 +52,6 @@ PRODUCT_PACKAGES += \
     init.qcom.ssr.sh \
     init.qcom.syspart_fixup.sh \
     init.razer.info.sh \
-    init.razer.peripherals.sh \
     init.razer.rc \
     init.target.rc \
     init.razer.usb.rc \
