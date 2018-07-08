@@ -1,0 +1,4 @@
+on init
+	setprop sys.usb.config=mtp
+	write /proc/usb_device 1
+	stop adbd

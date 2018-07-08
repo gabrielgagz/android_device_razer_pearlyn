@@ -54,6 +54,8 @@ PRODUCT_PACKAGES += \
     init.razer.rc \
     init.target.rc \
     init.razer.usb.rc \
+    init.recovery.qcom.rc \
+    init.recovery.recovery.rc \
     init.trace.rc \
     ueventd.qcom.rc    
     
