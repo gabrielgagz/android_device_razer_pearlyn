@@ -12,6 +12,3 @@ allow init debugfs:dir mounton;
 allow init debugfs:dir r_dir_perms;
 allow init debugfs:file rw_file_perms;
 ')
-
-domain_trans(init, rootfs, razer-info-sh)
-domain_trans(init, rootfs, qcom-usb-sh)

@@ -1,11 +1,3 @@
-service razer-info-sh /init.razer.info.sh
-   class late_start
-   user system
-   group system
-   disabled
-   oneshot
-   seclabel u:r:razer-info-sh:s0
-
 service razerdate /system/bin/date -s 20150101
    oneshot
    disabled
@@ -21,11 +13,7 @@ on fs
     start razerdate
 
 on boot
-    start razer-info-sh
     start valiService
-
-on property:dev.bootcomplete=1
-    start razer-info-sh
 
 on property:persist.sys.rzr.device_mode=0
 	write /proc/usb_device 0

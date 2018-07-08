@@ -51,11 +51,9 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.ssr.sh \
     init.qcom.syspart_fixup.sh \
-    init.razer.info.sh \
     init.razer.rc \
     init.target.rc \
     init.razer.usb.rc \
-    init.razer.usb.sh \
     init.trace.rc \
     ueventd.qcom.rc    
     
