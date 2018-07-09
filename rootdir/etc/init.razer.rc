@@ -2,19 +2,6 @@ service razerdate /system/bin/date -s 20150101
    oneshot
    disabled
 
-service valiService /system/bin/valiService
-    user root
-    group bluetooth net_bt_admin misc net_bt_stack diag
-    disabled
-    oneshot   
-
-on fs
-    # Set a default date
-    start razerdate
-
-on boot
-    start valiService
-
 on property:persist.sys.rzr.device_mode=0
 	write /proc/usb_device 0
 	start adbd

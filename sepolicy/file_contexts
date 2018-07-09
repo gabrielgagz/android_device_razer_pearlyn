@@ -8,7 +8,6 @@
 #################################
 # Razer Services
 #
-/system/bin/valiService							u:object_r:valiService_exec:s0
 /system/bin/date								u:object_r:razerdate_exec:s0
 
 #################

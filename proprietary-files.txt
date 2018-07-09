@@ -385,7 +385,6 @@ bin/pktlogconf
 bin/PktRspTest
 bin/ptt_socket_app
 bin/test_diag
-bin/valiService
 fonts/NanumGothic.ttf
 framework/oem-services.jar
 lib/libantradio.so
