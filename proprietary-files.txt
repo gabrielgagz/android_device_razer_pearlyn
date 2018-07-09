@@ -381,7 +381,6 @@ bin/pktlogconf
 bin/PktRspTest
 bin/ptt_socket_app
 bin/test_diag
-fonts/NanumGothic.ttf
 framework/oem-services.jar
 lib/libantradio.so
 lib/libgoogle_tagger_aah_jni.so
