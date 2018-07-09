@@ -193,10 +193,6 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libsmemlog.so
 
-# Razer/TV
-bin/razerdrm
-bin/razerdrmcheck
-
 # Sensors
 vendor/lib/libsensor1.so
 

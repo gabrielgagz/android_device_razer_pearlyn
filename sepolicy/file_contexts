@@ -1,8 +1,6 @@
 ###################################
 # System files
 #
-/system/bin/razerdrm                  		    u:object_r:razerdrm_exec:s0
-/system/bin/razerdrmcheck                       u:object_r:razerdrm_exec:s0
 /system/bin/btnvtool_razer                      u:object_r:system_file:s0
 
 #################################
