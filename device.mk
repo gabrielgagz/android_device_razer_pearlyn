@@ -163,7 +163,6 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audiod \
     audio_policy.apq8084 \
     audio.primary.apq8084 \
     audio.r_submix.default \
