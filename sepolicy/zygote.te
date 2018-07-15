@@ -9,7 +9,6 @@ allow zygote servicemanager:binder call;
 allow zygote shell_exec:file { execute execute_no_trans getattr open read };
 allow zygote system_server:binder { call transfer };
 allow zygote user_profile_data_file:file getattr;
-allow zygote zygote_tmpfs:file execute;
 allow zygote user_profile_data_file:dir search;
 allow zygote razer_prop:file { getattr open read };
 allow zygote time_daemon:unix_stream_socket connectto;
@@ -24,11 +23,3 @@ allow zygote system_data_file:dir { add_name create remove_name setattr write };
 allow zygote system_server:unix_stream_socket { read write };
 allow zygote user_profile_data_file:file { lock open read write };
 allow zygote priv_app:binder call;
-allow zygote adbsecure_prop:file { getattr open read };
-
-#debugfs access
-userdebug_or_eng(`
-typeattribute zygote qti_debugfs_domain;
-allow zygote debugfs:dir r_dir_perms;
-allow zygote debugfs:file rw_file_perms;
-')
