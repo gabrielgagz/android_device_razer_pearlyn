@@ -123,8 +123,9 @@ BOARD_HAVE_CAMERA := false
 BOARD_USES_QC_TIME_SERVICES := true
 
 # SELinux
- -include device/qcom/sepolicy/sepolicy.mk
- -include device/qcom/sepolicy/legacy-sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+-include device/qcom/sepolicy/sepolicy.mk
+-include device/qcom/sepolicy/legacy-sepolicy.mk
  
 # Enable dex-preoptimization to speed up first boot sequence
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
@@ -135,9 +136,6 @@ BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 1
 
 # LZMA compression
 WITH_LZMA_OTA:= true
-
-# sepolicy
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
