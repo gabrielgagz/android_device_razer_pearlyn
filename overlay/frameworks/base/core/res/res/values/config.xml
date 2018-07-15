@@ -48,7 +48,6 @@
     <integer name="config_screenBrightnessSettingMinimum">255</integer>
      <!-- Support for Bluetooth LE --> 
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
-    <bool name="single_hand_mode">false</bool>
     <bool name="config_enableWifiDisplay">true</bool>
     <!-- Flag indicating which package name can access the persistent data partition -->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
