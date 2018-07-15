@@ -13,7 +13,7 @@
 
 $(call inherit-product, device/razer/pearlyn/full_pearlyn.mk)
 
-# Inherit common CM TV device.
+# Inherit common Lineage TV device.
 $(call inherit-product, vendor/lineage/config/common_full_tv.mk)
 
 PRODUCT_DEVICE := pearlyn
