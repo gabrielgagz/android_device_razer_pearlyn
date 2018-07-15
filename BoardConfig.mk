@@ -124,6 +124,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # SELinux
  -include device/qcom/sepolicy/sepolicy.mk
+ -include device/qcom/sepolicy/legacy-sepolicy.mk
  
 # Enable dex-preoptimization to speed up first boot sequence
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
