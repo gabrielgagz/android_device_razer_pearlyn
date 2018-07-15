@@ -27,5 +27,6 @@ PRODUCT_DEFAULT_REGION := US
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=pearlyn \
-    BUILD_FINGERPRINT=razer/pearlyn/pearlyn:6.0.1/M-MMB29M-rzs-us-sf-bld2-19HP-08.02.AM/144:user/release-keys \
     PRIVATE_BUILD_DESC="pearlyn-user 6.0.1 M-MMB29M-rzs-us-sf-bld2-19HP-08.02.AM 144 release-keys"
+
+BUILD_FINGERPRINT := razer/pearlyn/pearlyn:6.0.1/M-MMB29M-rzs-us-sf-bld2-19HP-08.02.AM/144:user/release-keys
