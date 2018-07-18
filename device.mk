@@ -172,6 +172,9 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libgenlock \
+    libqdutils \
+    libqservice \
     tinymix
     
  # Display
