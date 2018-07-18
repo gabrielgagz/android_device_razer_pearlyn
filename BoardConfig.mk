@@ -143,6 +143,9 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 LZMA_RAMDISK_TARGETS := recovery
 
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
+
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
  -include device/razer/pearlyn/twrp.mk
