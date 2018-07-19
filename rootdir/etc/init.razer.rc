@@ -1,6 +1,9 @@
 service razerdate /system/bin/date -s 20150101
    oneshot
    disabled
+   
+on boot
+    write /proc/rzr_filter 0   
 
 on property:persist.sys.rzr.device_mode=0
 	write /proc/usb_device 0
