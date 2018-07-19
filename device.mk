@@ -160,10 +160,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-swap=false \
 	ro.product.first_api_level=22 \
 	ro.com.google.clientidbase=android-pearlyn
-	
-# Power HAL
-PRODUCT_PACKAGES += \
-    power.apq8084
     
 # Audio
 PRODUCT_PACKAGES += \
