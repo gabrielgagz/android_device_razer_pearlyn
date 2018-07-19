@@ -146,6 +146,9 @@ LZMA_RAMDISK_TARGETS := recovery
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
  -include device/razer/pearlyn/twrp.mk

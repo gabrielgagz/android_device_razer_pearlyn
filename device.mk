@@ -248,7 +248,10 @@ TARGET_SCREEN_WIDTH := 1920
 TARGET_SCREEN_HEIGHT := 1080
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true        
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true   
+
+# Treble packages
+$(call inherit-product, device/razer/pearlyn/treble.mk)     
     
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
