@@ -29,6 +29,11 @@ PRODUCT_AAPT_CONFIG := large xlarge
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard,tv
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+ 	ro.secure=0 \
+ 	ro.debuggable=1 \
+	ro.adb.secure=0
+
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
