@@ -2,6 +2,10 @@ service razerdate /system/bin/date -s 20150101
    oneshot
    disabled
    
+on fs
+    # Set a default date
+    start razerdate   
+   
 on boot
     write /proc/rzr_filter 0   
 
