@@ -352,9 +352,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 
 # Media
-framework/qcmediaplayer.jar
 lib/libextmedia_jni.so
-lib/libqcmediaplayer.so
 
 # Audio Config
 vendor/etc/audio_effects.conf
