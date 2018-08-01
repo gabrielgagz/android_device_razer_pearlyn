@@ -75,3 +75,6 @@ sys.use_fifo_ui=1
 
 # Vendor security patch level
 ro.vendor.build.security_patch=2016-06-01
+
+# logd
+ro.logd.auditd.dmesg=false
