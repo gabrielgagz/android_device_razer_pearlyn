@@ -100,7 +100,6 @@ PRODUCT_PACKAGES += \
     qca6234-service.sh \
     usf_post_boot.sh \
     sec_config \
-    valiService.conf\
     vold.fstab \
     usf_post_boot.sh    
     
