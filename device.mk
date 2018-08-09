@@ -219,11 +219,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	cplay \
 	hostapd \
-	mm-vdec-omx-test \
-	mm-venc-omx-test720p \
-	mm-video-driver-test \
-	mm-video-encdrv-test \
-	msm-vidc-test \
 	rmnetcli \
 	setup_fs \
 	tinycap \
