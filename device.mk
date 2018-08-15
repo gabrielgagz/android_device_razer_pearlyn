@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
     
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/media/mixer_paths.xml:system/vendor/etc/mixer_paths.xml \
     $(LOCAL_PATH)/media/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
