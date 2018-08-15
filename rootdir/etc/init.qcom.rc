@@ -239,7 +239,11 @@ on fs
     setprop ro.crypto.fuse_sdcard true
 
     # Set a default date
-    start razerdate         
+    start razerdate
+    
+on post-fs
+    # Allow writing to the kernel trace log.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker             
 
 # msm specific files that need to be created on /data
 on post-fs-data
