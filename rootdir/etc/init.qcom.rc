@@ -349,6 +349,9 @@ on post-fs-data
     
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
+    
+    # Bluetooth
+    chown bluetooth bluetooth /persist/.bt_nv.bin
 
 # Export GPIO56 for fusion targets to enable/disable hub
 service usbhub_init /system/bin/usbhub_init
