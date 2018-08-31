@@ -90,8 +90,9 @@ on early-boot
     
     # Load qcacld-2.0 wifi driver
     exec u:r:modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules wlan.ko	
- 
-    start program_bdaddr
+	
+	// Init a dummy BT MAC address, will be overwritten later
+    setprop ro.boot.btmacaddr 00:00:00:00:00:00
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
