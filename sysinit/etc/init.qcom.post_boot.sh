@@ -480,17 +480,11 @@ case "$target" in
         echo 300000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
         echo 300000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
         echo 1 > /sys/module/msm_thermal/core_control/enabled
-        #setprop ro.qualcomm.perf.cores_online 2
         chown -h  system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
         chown -h system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-        chown -h root.system /sys/devices/system/cpu/mfreq
-        chmod -h 220 /sys/devices/system/cpu/mfreq
         chown -h root.system /sys/devices/system/cpu/cpu1/online
         chown -h root.system /sys/devices/system/cpu/cpu2/online
         chown -h root.system /sys/devices/system/cpu/cpu3/online
-        chmod -h 664 /sys/devices/system/cpu/cpu1/online
-        chmod -h 664 /sys/devices/system/cpu/cpu2/online
-        chmod -h 664 /sys/devices/system/cpu/cpu3/online
     ;;
 esac
 
@@ -597,18 +591,7 @@ case "$target" in
         echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
     ;;
     "apq8084")
-        rm /data/system/perfd/default_values
         start mpdecision
-        echo 1024 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sda/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sdb/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sdc/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sdd/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sde/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sdf/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sdg/bdi/read_ahead_kb
-        echo 1024 > /sys/block/sdh/bdi/read_ahead_kb
-        # echo '9706,14559,29118,48530,67942,72795' > /sys/module/lowmemorykiller/parameters/minfree
     ;;
     "msm7627a")
         if [ -f /sys/devices/soc0/soc_id ]; then
@@ -703,6 +686,3 @@ if [ ! -z "$root_tasks" ]
 then
 	echo "Error: Could not move all tasks to native cgroup"
 fi
-
-# Start RIDL/LogKit II client
-su -c /system/vendor/bin/startRIDL.sh &
