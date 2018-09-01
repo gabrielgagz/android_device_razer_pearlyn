@@ -156,8 +156,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.google.clientidbase=android-pearlyn
 	
 # Power HAL	
-PRODUCT_PACKAGES += \	
-    power.apq8084	
+PRODUCT_PACKAGES += \
+    power.apq8084
     
 # Audio
 PRODUCT_PACKAGES += \
