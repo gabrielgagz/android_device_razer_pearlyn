@@ -56,7 +56,3 @@ on boot
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
     write /dev/cpuctl/cpu.notify_on_migrate 0
-
-    # Start mpdecision here to make sure cpufreq is set up
-    rm /data/system/perfd/default_values
-    start mpdecision

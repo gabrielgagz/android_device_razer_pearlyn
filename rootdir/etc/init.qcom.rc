@@ -249,6 +249,9 @@ on fs
 on post-fs-data
 	mount debugfs debugfs /sys/kernel/debug mode=0755
     mount tracefs tracefs /sys/kernel/debug/tracing mode=0755
+    
+    # Remove old mpdecision data
+    rm /data/system/perfd/default_values
 
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
@@ -758,7 +761,6 @@ on property:ro.build.type=user
 
 on property:sys.boot_completed=1
 	swapon_all fstab.qcom
-    start mpdecision
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
@@ -777,7 +779,6 @@ service mpdecision /system/bin/mpdecision --avg_comp --min_cores=4
    class main
    user root
    group root readproc
-   disabled
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
