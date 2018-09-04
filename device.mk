@@ -33,10 +33,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/Nexus_Remote.kl:system/usr/keylayout/Nexus_Remote.kl \
-    $(LOCAL_PATH)/keylayout/Vendor_2836_Product_0001.kl:system/usr/keylayout/Vendor_2836_Product_0001.kl \
-    $(LOCAL_PATH)/keylayout/Vendor_045e_Product_02e0.kl:system/usr/keylayout/Vendor_045e_Product_02e0.kl \
-    $(LOCAL_PATH)/keylayout/Vendor_045e_Product_02fd.kl:system/usr/keylayout/Vendor_045e_Product_02fd.kl
+    $(LOCAL_PATH)/configs/keylayout/Nexus_Remote.kl:system/usr/keylayout/Nexus_Remote.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_2836_Product_0001.kl:system/usr/keylayout/Vendor_2836_Product_0001.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02e0.kl:system/usr/keylayout/Vendor_045e_Product_02e0.kl \
+    $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02fd.kl:system/usr/keylayout/Vendor_045e_Product_02fd.kl
     
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -56,18 +56,14 @@ PRODUCT_PACKAGES += \
     
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/mixer_paths.xml:system/vendor/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/media/audio_policy.conf:system/vendor/etc/audio_policy.conf \
-    $(LOCAL_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/media/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/media/audio_platform_info_i2s.xml:system/vendor/etc/audio_platform_info_i2s.xml \
-    $(LOCAL_PATH)/media/listen_platform_info.xml:system/vendor/etc/listen_platform_info.xml \
-    $(LOCAL_PATH)/media/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
-    $(LOCAL_PATH)/media/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/media/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    $(LOCAL_PATH)/media/audio_effects.xml:system/vendor/etc/audio_effects.xml \
+    $(LOCAL_PATH)/configs/media/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/media/audio_platform_info_i2s.xml:system/vendor/etc/audio_platform_info_i2s.xml \
+    $(LOCAL_PATH)/configs/media/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_profiles.xml:system/vendor/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media/mixer_paths.xml:system/vendor/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/media/mixer_paths_i2s.xml:system/etc/mixer_paths_i2s.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
@@ -100,23 +96,23 @@ PRODUCT_PACKAGES += \
     
 # Permissions
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/permissions/pearlyn_features.xml:system/etc/permissions/pearlyn_features.xml \
-    $(LOCAL_PATH)/etc/permissions/nrdp.modelgroup.xml:system/etc/permissions/nrdp.modelgroup.xml
+    $(LOCAL_PATH)/configs/permissions/pearlyn_features.xml:system/etc/permissions/pearlyn_features.xml \
+    $(LOCAL_PATH)/configs/permissions/nrdp.modelgroup.xml:system/etc/permissions/nrdp.modelgroup.xml
 
 # Wifi Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/etc/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
-    $(LOCAL_PATH)/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/etc/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
-    $(LOCAL_PATH)/etc/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
     
 # Hostapd Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
-    $(LOCAL_PATH)/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
-    $(LOCAL_PATH)/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny
+    $(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+    $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    $(LOCAL_PATH)/configs/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny
     
 # Build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \

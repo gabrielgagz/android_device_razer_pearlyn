@@ -99,22 +99,8 @@ LOCAL_SRC_FILES    := etc/qca6234-service.sh
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE       := sec_config
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/sec_config
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE       := usf_post_boot.sh
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/usf_post_boot.sh
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := vold.fstab
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/vold.fstab
 include $(BUILD_PREBUILT)
