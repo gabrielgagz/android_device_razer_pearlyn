@@ -50,9 +50,23 @@
 #define STOP_WCNSS_FILTER 0xDD
 #define STOP_WAIT_TIMEOUT   1000
 
-#define SOC_INIT_PROPERTY "vendor.wc_transport.soc_initialized"
+#ifndef USE_OLD_WCNSS_FILTER
+#define WC_TRANSPORT_PROPERTY_PREFIX "vendor."
+#else
+#define WC_TRANSPORT_PROPERTY_PREFIX ""
+#endif
 
-#define BT_VND_FILTER_START "vendor.wc_transport.start_hci"
+#define SOC_INIT_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.soc_initialized"
+
+#define BT_VND_FILTER_START WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.start_hci"
+
+#define WC_TRANSPORT_CLEAN_UP_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.clean_up"
+#define WC_TRANSPORT_EXTLDO_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.extldo"
+#define WC_TRANSPORT_FORCE_SPECIAL_BYTE_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.force_special_byte"
+#define WC_TRANSPORT_HCI_FILTER_STATUS_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.hci_filter_status"
+#define WC_TRANSPORT_PATCH_DNLD_INPROG_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.patch_dnld_inprog"
+#define WC_TRANSPORT_REF_COUNT_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.ref_count"
+#define WC_TRANSPORT_STACK_BDADDR_PROPERTY WC_TRANSPORT_PROPERTY_PREFIX "wc_transport.stack_bdaddr"
 
 #define CMD_TIMEOUT  0x22
 
@@ -230,7 +244,7 @@ bool can_perform_action(char action) {
     char inProgress[PROPERTY_VALUE_MAX] = {'\0'};
     int value, ret;
 
-    property_get("vendor.wc_transport.ref_count", ref_count, "0");
+    property_get(WC_TRANSPORT_REF_COUNT_PROPERTY, ref_count, "0");
 
     value = atoi(ref_count);
     ALOGV("%s: ref_count: %s\n",__func__,  ref_count);
@@ -269,7 +283,7 @@ bool can_perform_action(char action) {
     snprintf(ref_count, 3, "%d", value);
     ALOGV("%s: updated ref_count is: %s", __func__, ref_count);
 
-    ret  = property_set("vendor.wc_transport.ref_count", ref_count);
+    ret  = property_set(WC_TRANSPORT_REF_COUNT_PROPERTY, ref_count);
     if (ret < 0) {
         ALOGE("%s: Error while updating property: %d\n", __func__, ret);
         return false;
@@ -286,7 +300,7 @@ void stop_hci_filter() {
 
        ALOGV("%s: Entry ", __func__);
 
-       property_get("vendor.wc_transport.hci_filter_status", value, "0");
+       property_get(WC_TRANSPORT_HCI_FILTER_STATUS_PROPERTY, value, "0");
        if (strcmp(value, "0") == 0) {
            ALOGI("%s: hci_filter has been stopped already", __func__);
        }
@@ -338,8 +352,8 @@ int start_hci_filter() {
            //Filter should have been started OR in the process of initializing
            //Make sure of hci_filter_status and return the state based on it
        } else {
-           property_set("vendor.wc_transport.clean_up","0");
-           property_set("vendor.wc_transport.hci_filter_status", "0");
+           property_set(WC_TRANSPORT_CLEAN_UP_PROPERTY,"0");
+           property_set(WC_TRANSPORT_HCI_FILTER_STATUS_PROPERTY, "0");
            property_set(BT_VND_FILTER_START, "true");
            ALOGV("%s: %s set to true ", __func__, BT_VND_FILTER_START );
        }
@@ -349,7 +363,7 @@ int start_hci_filter() {
          comesup and ready to accept the connections */
        //sched_yield();
        for(i=0; i<45; i++) {
-          property_get("vendor.wc_transport.hci_filter_status", value, "0");
+          property_get(WC_TRANSPORT_HCI_FILTER_STATUS_PROPERTY, value, "0");
           if (strcmp(value, "1") == 0) {
                init_success = 1;
                break;
@@ -473,9 +487,9 @@ static int bt_powerup(int en )
     }
     if (!memcmp(enable_ldo, "true", 4)) {
         ALOGI("External LDO has been configured");
-        ret = property_set("vendor.wc_transport.extldo", "enabled");
+        ret = property_set(WC_TRANSPORT_EXTLDO_PROPERTY, "enabled");
         if (ret < 0) {
-            ALOGI("%s: Not able to set property vendor.wc_transport.extldo\n", __func__);
+            ALOGI("%s: Not able to set property " WC_TRANSPORT_EXTLDO_PROPERTY "\n", __func__);
         }
         q->enable_extldo = TRUE;
     }
@@ -483,7 +497,7 @@ static int bt_powerup(int en )
     if(on == '0'){
         ALOGE("Stopping HCI filter as part of CTRL:OFF");
         stop_hci_filter();
-        property_set("vendor.wc_transport.soc_initialized", "0");
+        property_set(SOC_INIT_PROPERTY, "0");
     }
 
     if (q->soc_type >= BT_SOC_CHEROKEE && q->soc_type < BT_SOC_RESERVED) {
@@ -633,9 +647,9 @@ static int init(const bt_vendor_callbacks_t *cb, unsigned char *bdaddr)
     snprintf(prop, sizeof(prop), "%02x:%02x:%02x:%02x:%02x:%02x",
              temp->bdaddr[0], temp->bdaddr[1], temp->bdaddr[2],
              temp->bdaddr[3], temp->bdaddr[4], temp->bdaddr[5]);
-    ret = property_set("vendor.wc_transport.stack_bdaddr", prop);
+    ret = property_set(WC_TRANSPORT_STACK_BDADDR_PROPERTY, prop);
     if (ret < 0) {
-        ALOGE("Failed to set vendor.wc_transport.stack_bdaddr prop, ret = %d", ret);
+        ALOGE("Failed to set " WC_TRANSPORT_STACK_BDADDR_PROPERTY " prop, ret = %d", ret);
         ret = -BT_STATUS_PROP_FAILURE;
         goto out;
     }
@@ -899,7 +913,7 @@ userial_open:
                             property_get("ro.vendor.bluetooth.emb_wp_mode", emb_wp_mode, false);
                             if (!is_soc_initialized()) {
                                 char* dlnd_inprog = is_ant_req ? "ant" : "bt";
-                                if (property_set("vendor.wc_transport.patch_dnld_inprog", dlnd_inprog) < 0) {
+                                if (property_set(WC_TRANSPORT_PATCH_DNLD_INPROG_PROPERTY, dlnd_inprog) < 0) {
                                     ALOGE("%s: Failed to set dnld_inprog %s", __FUNCTION__, dlnd_inprog);
                                 }
 
@@ -922,7 +936,7 @@ userial_open:
                                     }
                                 }
                                 ALOGV("rome_soc_init is started");
-                                property_set("vendor.wc_transport.soc_initialized", "0");
+                                property_set(SOC_INIT_PROPERTY, "0");
 #ifdef READ_BT_ADDR_FROM_PROP
                                 /*Give priority to read BD address from boot property*/
                                 ignore_boot_prop = FALSE;
@@ -971,21 +985,21 @@ userial_open:
                                     retval = -1;
                                 } else {
                                     ALOGV("rome_soc_init is completed");
-                                    property_set("vendor.wc_transport.soc_initialized", "1");
+                                    property_set(SOC_INIT_PROPERTY, "1");
                                     skip_init = false;
                                 }
                             }
-                            if (property_set("vendor.wc_transport.patch_dnld_inprog", "null") < 0) {
+                            if (property_set(WC_TRANSPORT_PATCH_DNLD_INPROG_PROPERTY, "null") < 0) {
                                 ALOGE("%s: Failed to set property", __FUNCTION__);
                             }
 
-                            property_set("vendor.wc_transport.clean_up","0");
+                            property_set(WC_TRANSPORT_CLEAN_UP_PROPERTY,"0");
                             if (retval != -1) {
                                 retval = start_hci_filter();
                                 if (retval < 0) {
                                     ALOGE("%s: WCNSS_FILTER wouldn't have started in time\n", __func__);
-                                    property_set("vendor.wc_transport.hci_filter_status", "-1");
-                                    property_set("vendor.wc_transport.start_hci", "false");
+                                    property_set(WC_TRANSPORT_HCI_FILTER_STATUS_PROPERTY, "-1");
+                                    property_set(BT_VND_FILTER_START, "false");
                                     bt_powerup(0);
                                 } else {
 #ifdef ENABLE_ANT
@@ -1050,8 +1064,8 @@ userial_open:
                                  Set the following property to -1 so that the SSR cleanup routine
                                  can reset SOC.
                                  */
-                                property_set("vendor.wc_transport.hci_filter_status", "-1");
-                                property_set("vendor.wc_transport.start_hci", "false");
+                                property_set(WC_TRANSPORT_HCI_FILTER_STATUS_PROPERTY, "-1");
+                                property_set(BT_VND_FILTER_START, "false");
                                 bt_powerup(0);
                             } else {
 #ifdef ENABLE_ANT
@@ -1108,7 +1122,7 @@ userial_open:
         case BT_VND_OP_ANT_USERIAL_CLOSE:
             {
                 ALOGI("bt-vendor : BT_VND_OP_ANT_USERIAL_CLOSE");
-                property_set("vendor.wc_transport.clean_up","1");
+                property_set(WC_TRANSPORT_CLEAN_UP_PROPERTY,"1");
                 if (q->ant_fd != -1) {
                     ALOGE("closing ant_fd");
                     close(q->ant_fd);
@@ -1121,7 +1135,7 @@ userial_open:
         case BT_VND_OP_FM_USERIAL_CLOSE:
             {
                 ALOGI("bt-vendor : BT_VND_OP_FM_USERIAL_CLOSE");
-                property_set("vendor.wc_transport.clean_up","1");
+                property_set(WC_TRANSPORT_CLEAN_UP_PROPERTY,"1");
                 if (q->fm_fd != -1) {
                     ALOGE("closing fm_fd");
                     close(q->fm_fd);
@@ -1142,7 +1156,7 @@ userial_open:
                     case BT_SOC_AR3K:
                     case BT_SOC_CHEROKEE:
                     {
-                        property_set("vendor.wc_transport.clean_up","1");
+                        property_set(WC_TRANSPORT_CLEAN_UP_PROPERTY,"1");
                         userial_vendor_close();
                         break;
                     }
@@ -1250,7 +1264,7 @@ userial_open:
                   case BT_SOC_ROME:
                        {
                            char value[PROPERTY_VALUE_MAX] = {'\0'};
-                           property_get("vendor.wc_transport.hci_filter_status", value, "0");
+                           property_get(WC_TRANSPORT_HCI_FILTER_STATUS_PROPERTY, value, "0");
                            if(is_soc_initialized()&& (strcmp(value,"1") == 0))
                            {
                               __hw_epilog_process();
@@ -1332,7 +1346,7 @@ static void ssr_cleanup(int reason)
         ALOGE("ssr_cleanup called with NULL context");
         goto out;
     }
-    if (property_set("vendor.wc_transport.patch_dnld_inprog", "null") < 0) {
+    if (property_set(WC_TRANSPORT_PATCH_DNLD_INPROG_PROPERTY, "null") < 0) {
         ALOGE("Failed to set property");
     }
 
@@ -1400,7 +1414,7 @@ void wait_for_patch_download(bool is_ant_req) {
     ALOGV("%s:", __FUNCTION__);
     char inProgress[PROPERTY_VALUE_MAX] = {'\0'};
     while (1) {
-        property_get("vendor.wc_transport.patch_dnld_inprog", inProgress, "null");
+        property_get(WC_TRANSPORT_PATCH_DNLD_INPROG_PROPERTY, inProgress, "null");
 
         if(is_ant_req && !(strcmp(inProgress,"bt"))) {
            //ANT request, wait for BT to finish
@@ -1432,7 +1446,7 @@ bool is_download_progress () {
     {
         case BT_SOC_ROME:
             ALOGI("%s: ROME case", __func__);
-            property_get("vendor.wc_transport.patch_dnld_inprog", inProgress, "null");
+            property_get(WC_TRANSPORT_PATCH_DNLD_INPROG_PROPERTY, inProgress, "null");
             if(strcmp(inProgress,"null") == 0) {
                 retval = false;
             } else {
@@ -1459,11 +1473,11 @@ static bool is_debug_force_special_bytes() {
     enabled = true;
 #endif
 
-    ret = property_get("vendor.wc_transport.force_special_byte", value, NULL);
+    ret = property_get(WC_TRANSPORT_FORCE_SPECIAL_BYTE_PROPERTY, value, NULL);
 
     if (ret) {
         enabled = (strcmp(value, "false") ==0) ? false : true;
-        ALOGV("%s: vendor.wc_transport.force_special_byte: %s, enabled: %d ",
+        ALOGV("%s: " WC_TRANSPORT_FORCE_SPECIAL_BYTE_PROPERTY ": %s, enabled: %d ",
             __func__, value, enabled);
     }
 
