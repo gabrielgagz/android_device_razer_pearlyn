@@ -106,9 +106,9 @@ PRODUCT_PACKAGES += \
     vold.fstab \
     usf_post_boot.sh    
     
-# LeanbackCustomize & PearlynLed
+# LineageCustomizer & PearlynLed
 PRODUCT_PACKAGES += \
-	LeanbackCustomize \
+	LineageCustomizer \
 	PearlynLed
     
 # Permissions
