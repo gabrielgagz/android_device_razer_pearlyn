@@ -385,21 +385,3 @@ framework/oem-services.jar
 lib/libantradio.so
 lib/libgoogle_tagger_aah_jni.so
 vendor/lib/libuhid.so
-
-# Tests and debug
-bin/cld-fwlog-netlink
-bin/cld-fwlog-parser
-bin/cld-fwlog-record
-bin/diag_callback_client
-bin/diag_dci_sample
-bin/diag_klog
-bin/diag_mdlog
-bin/diag_qshrink4_daemon
-bin/diag_socket_log
-bin/diag_uart_log
-bin/mm-qjpeg-dec-test
-bin/mm-qjpeg-enc-test
-bin/mm-qomx-idec-test
-bin/mm-qomx-ienc-test
-bin/StoreKeybox
-vendor/bin/sound_trigger_test
