@@ -44,14 +44,13 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.mdm.sh \
     init.qcom.class_core.sh \
-    init.pearlyn.diag.rc \
     init.qcom.early_boot.sh \
     init.qcom.factory.sh \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.ssr.sh \
     init.qcom.syspart_fixup.sh \
-    init.razer.usb.rc \
+    init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.recovery.recovery.rc \
     init.trace.rc \
