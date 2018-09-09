@@ -18,7 +18,6 @@ media.stagefright.enable-scan=true
 media.stagefright.use-awesome=true
 
 # Graphics
-ro.sf.lcd_density=320
 ro.opengles.version=196609
 persist.hwc.mdpcomp.enable=false
 persist.mdpcomp.4k2kSplit=1
