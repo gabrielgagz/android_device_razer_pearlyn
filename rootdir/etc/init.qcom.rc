@@ -168,9 +168,17 @@ on boot
     # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
     write /proc/sys/kernel/printk "6 6 1 7"
+    
+# Enable Razer fileter for Serval Gamepad
+    write /proc/rzr_filter 0 
+    
+on fs
+    # Set a default date
+    start razerdate         
 
 # msm specific files that need to be created on /data
 on post-fs-data
+	setprop persist.sys.display.resolution 1920x1080
 	mount debugfs debugfs /sys/kernel/debug mode=0755
     mount tracefs tracefs /sys/kernel/debug/tracing mode=0755
 
@@ -783,3 +791,18 @@ on property:persist.sys.rootagent=1
     start rootagent
 on property:persist.sys.rootagent=0
     stop rootagent
+    
+service razerdate /system/bin/date -s 20150101
+   oneshot
+   disabled    
+
+on property:persist.sys.rzr.device_mode=0
+	write /proc/usb_device 0
+	start adbd
+	
+on property:persist.sys.rzr.device_mode=1
+	write /proc/usb_device 1
+	stop adbd
+	
+on property:ro.build.type=user
+    rm /dev/diag	
