@@ -150,5 +150,5 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
- -include device/razer/pearlyn/twrp.mk
+ -include device/razer/pearlyn/twrp/twrp.mk
 endif
