@@ -27,7 +27,27 @@
 
 import init.trace.rc
 import init.qcom.usb.rc
-import init.target.rc 
+
+on early-init
+    mkdir /firmware 0771 system system
+    mkdir /firmware/image 0771 system system
+    
+    # Keymaster Fix
+    symlink /system/vendor/firmware/keymaster/keymaster.b00 /firmware/image/keymaster.b00
+    symlink /system/vendor/firmware/keymaster/keymaster.b01 /firmware/image/keymaster.b01
+    symlink /system/vendor/firmware/keymaster/keymaster.b02 /firmware/image/keymaster.b02
+    symlink /system/vendor/firmware/keymaster/keymaster.b03 /firmware/image/keymaster.b03
+    symlink /system/vendor/firmware/keymaster/keymaster.mdt /firmware/image/keymaster.mdt
+    
+    # Widevine Fix
+    symlink /system/vendor/firmware/widevine.b00 /firmware/image/widevine.b00
+    symlink /system/vendor/firmware/widevine.b01 /firmware/image/widevine.b01
+    symlink /system/vendor/firmware/widevine.b02 /firmware/image/widevine.b02
+    symlink /system/vendor/firmware/widevine.b03 /firmware/image/widevine.b03
+    symlink /system/vendor/firmware/widevine.mbn /firmware/image/widevine.mbn
+    symlink /system/vendor/firmware/widevine.mdt /firmware/image/widevine.mdt
+    
+    symlink /data/tombstones /tombstones
 
 on init
     # Set permissions for persist partition
@@ -41,6 +61,29 @@ on init
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
+    
+    chown system graphics /sys/class/graphics/fb0/cec/enable
+    chmod 0664 /sys/class/graphics/fb0/cec/enable
+    chown system graphics /sys/class/graphics/fb0/cec/logical_addr
+    chmod 0664 /sys/class/graphics/fb0/cec/logical_addr
+    chown system graphics /sys/class/graphics/fb0/cec/rd_msg
+    chmod 0664 /sys/class/graphics/fb0/cec/rd_msg
+    chown system graphics /sys/class/graphics/fb0/cec/wr_msg
+    chmod 0600 /sys/class/graphics/fb0/cec/wr_msg
+    chown system graphics /sys/class/graphics/fb0/cec/enable
+    chmod 0664 /sys/class/graphics/fb0/cec/enable
+    chown system graphics /sys/class/graphics/fb0/hpd
+    chmod 0664 /sys/class/graphics/fb0/hpd
+    chown system graphics /sys/class/graphics/fb0/vendor_name
+    chmod 0664 /sys/class/graphics/fb0/vendor_name
+    chown system graphics /sys/class/graphics/fb0/product_description
+    chmod 0664 /sys/class/graphics/fb0/product_description
+    chown system graphics /sys/class/graphics/fb0/hdcp/tp
+    chmod 0664 /sys/class/graphics/fb0/hdcp/tp
+    chown system graphics /sys/class/graphics/fb0/video_mode
+    chmod 0664 /sys/class/graphics/fb0/video_mode
+    chown system graphics /sys/class/graphics/fb0/pa
+    chmod 0664 /sys/class/graphics/fb0/pa
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -172,7 +215,42 @@ on boot
 # Enable Razer fileter for Serval Gamepad
     write /proc/rzr_filter 0 
     
+    # Enable writing to led blink node from userspace
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/green/blink
+    # Enable writing to brightness node under torch-light from userspace
+    chown system system /sys/class/leds/torch-light/brightness
+    
 on fs
+
+	wait /dev/block/platform/${ro.boot.bootdevice}
+    symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
+    mount_all fstab.qcom
+
+    # Keeping following partitions outside fstab file. As user may not have
+    # these partition flashed on the device. Failure to mount any partition in fstab file
+    # results in failure to launch late-start class.
+
+    wait /dev/block/bootdevice/by-name/cache
+    mount ext4 /dev/block/bootdevice/by-name/cache /cache nosuid nodev barrier=1
+
+    wait /dev/block/bootdevice/by-name/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    restorecon_recursive /persist
+    mkdir /persist/data 0700 system system
+    mkdir /persist/data/sfs 0700 system system
+    mkdir /persist/data/tz 0700 system system
+
+    wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
+
+    #readable symlinks for video nodes
+    mkdir /dev/video
+    symlink /dev/video32 /dev/video/venus_dec
+    symlink /dev/video33 /dev/video/venus_enc
+
+    setprop ro.crypto.fuse_sdcard true
+
     # Set a default date
     start razerdate         
 
@@ -265,6 +343,26 @@ on post-fs-data
 
     #Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
+    
+    mkdir /data/tombstones 0771 system system
+    mkdir /tombstones/modem 0771 system system
+    mkdir /tombstones/lpass 0771 system system
+    mkdir /tombstones/wcnss 0771 system system
+    mkdir /tombstones/dsps 0771 system system
+    
+    mkdir /data/vendor/misc 01771 system system
+
+    # Create directory used by display clients
+    mkdir /data/vendor/display 0770 system graphics
+
+    # Change lm related dirs
+    mkdir /data/vendor/lm 0700 root root
+
+    # Create directory used by media clients
+    mkdir /data/vendor/media 0770 mediacodec media
+
+    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
+    mkdir /data/vendor/misc/bluetooth 0770 bluetooth bluetooth
 
 # Export GPIO56 for fusion targets to enable/disable hub
 service usbhub_init /system/bin/usbhub_init
@@ -806,3 +904,153 @@ on property:persist.sys.rzr.device_mode=1
 	
 on property:ro.build.type=user
     rm /dev/diag	
+
+on property:sys.boot_completed=1
+	swapon_all fstab.qcom
+    start mpdecision
+
+# Allow usb charging to be disabled peristently
+on property:persist.usb.chgdisabled=1
+    write /sys/class/power_supply/battery/charging_enabled 0
+
+on property:persist.usb.chgdisabled=0
+    write /sys/class/power_supply/battery/charging_enabled 1
+
+
+service qseecomd /system/bin/qseecomd
+   class core
+   user root
+   group root
+
+service mpdecision /system/bin/mpdecision --avg_comp --min_cores=4
+   class main
+   user root
+   group root readproc
+   disabled
+
+service thermal-engine /system/vendor/bin/thermal-engine
+   class main
+   user root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   group root
+
+service time_daemon /system/bin/time_daemon
+   class late_start
+   user root
+   group root
+
+service usf_tester /system/bin/usf_tester
+    user system
+    group system inet
+    disabled
+
+service usf_epos /system/bin/usf_epos
+    user system
+    group system inet
+    disabled
+
+service usf_gesture /system/bin/usf_gesture
+    user system
+    group system inet
+    disabled
+
+service usf_sync_gesture /system/bin/usf_sync_gesture
+    user system
+    group system inet
+    disabled
+
+service usf_p2p /system/bin/usf_p2p
+    user system
+    group system inet
+    disabled
+
+service usf_hovering /system/bin/usf_hovering
+    user system
+    group system inet
+    disabled
+
+service usf_proximity /system/bin/usf_proximity
+    user system
+    group system inet
+    disabled
+
+service usf-post-boot /system/bin/sh /system/etc/usf_post_boot.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+on property:init.svc.bootanim=stopped
+    start usf-post-boot
+
+service imsdatadaemon /system/bin/imsdatadaemon
+    class main
+    user system
+    socket ims_datad stream 0660 system radio
+    group system wifi radio inet net_raw log qcom_diag net_admin
+    disabled
+
+service mdm_helper /system/bin/mdm_helper
+    class core
+    onrestart setprop ro.service.mdm_helper_restarted "true"
+    user root
+    group root system
+    disabled
+
+service mdm_helper_proxy /system/bin/mdm_helper_proxy
+    class core
+    user system
+    group system
+    disabled
+
+service mdm_launcher /system/bin/sh /init.mdm.sh
+    class core
+    oneshot
+
+# Stop mdm_helper_proxy in case of shutdown
+on property:sys.shutdown.requested=*
+    stop mdm_helper_proxy
+
+# Stop mdm_helper_proxy on APQ target
+on property:ro.radio.noril=yes
+    stop mdm_helper_proxy
+
+on property:persist.airplane.mode.pwr.svg=enabled
+    setprop ro.mdm_helper_proxy_req false
+
+on property:init.svc.ril-daemon=running
+    setprop ro.mdm_helper_proxy_req true
+
+# Start mdm_helper_proxy
+on property:ro.mdm_helper_proxy_req=true
+    start mdm_helper_proxy
+
+on property:vold.decrypt=trigger_reset_main
+    stop gnss-svcd
+
+# QCA1530 SoC Service Daemon
+service gnss-svcd /system/vendor/bin/gnss.qca1530.sh start
+   class late_start
+   user root
+   group gps system qcom_diag diag log inet net_raw
+   disabled
+
+on property:sys.ims.QMI_DAEMON_STATUS=1
+    start imsdatadaemon
+
+service ims_rtp_daemon /system/bin/ims_rtp_daemon
+   class main
+   user system
+   socket ims_rtpd stream 0660 system radio
+   group radio net_raw diag qcom_diag log inet
+   disabled
+
+on property:sys.ims.DATA_DAEMON_STATUS=1
+    start ims_rtp_daemon
+
+service adsprpcd /system/bin/adsprpcd
+   class main
+   user media
+   group media

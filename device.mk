@@ -51,7 +51,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.ssr.sh \
     init.qcom.syspart_fixup.sh \
-    init.target.rc \
     init.razer.usb.rc \
     init.recovery.qcom.rc \
     init.recovery.recovery.rc \
