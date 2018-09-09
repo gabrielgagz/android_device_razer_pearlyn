@@ -26,7 +26,7 @@
 #
 
 import init.trace.rc
-import init.razer.usb.rc
+import init.qcom.usb.rc
 import init.target.rc 
 
 on init
