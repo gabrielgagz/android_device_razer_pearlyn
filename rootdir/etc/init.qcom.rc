@@ -212,7 +212,7 @@ on boot
     # Set the default message loglevel to KERN_INFO
     write /proc/sys/kernel/printk "6 6 1 7"
     
-# Enable Razer fileter for Serval Gamepad
+# Enable Razer filter for Serval Gamepad
     write /proc/rzr_filter 0 
     
     # Enable writing to led blink node from userspace
