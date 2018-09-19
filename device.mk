@@ -42,6 +42,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
     init.mdm.sh \
+    init.program_bdaddr.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.factory.sh \
@@ -51,7 +52,7 @@ PRODUCT_PACKAGES += \
     init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
     init.trace.rc \
-    ueventd.qcom.rc    
+    ueventd.qcom.rc
     
 # Media
 PRODUCT_COPY_FILES += \

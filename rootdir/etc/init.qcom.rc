@@ -210,6 +210,8 @@ on boot
     # Enable writing to brightness node under torch-light from userspace
     chown system system /sys/class/leds/torch-light/brightness
     
+    start program_bdaddr
+    
 on fs
 
 	wait /dev/block/platform/${ro.boot.bootdevice}
@@ -1028,3 +1030,9 @@ service adsprpcd /system/bin/adsprpcd
    class main
    user media
    group media
+
+service program_bdaddr /system/vendor/bin/init.program_bdaddr.sh
+    user bluetooth
+    group bluetooth
+    disabled
+    oneshot
