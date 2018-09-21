@@ -56,10 +56,6 @@ on init
 
     export EXTERNAL_STORAGE /sdcard
     export SECONDARY_STORAGE /storage/sdcard1
-
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
     
     chown system graphics /sys/class/graphics/fb0/cec/enable
     chmod 0664 /sys/class/graphics/fb0/cec/enable
