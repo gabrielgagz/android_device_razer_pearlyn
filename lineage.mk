@@ -11,7 +11,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/razer/pearlyn/full_pearlyn.mk)
+$(call inherit-product, device/razer/pearlyn/device.mk)
 
 # Inherit common Lineage TV device.
 $(call inherit-product, vendor/lineage/config/common_full_tv.mk)
@@ -19,6 +19,8 @@ $(call inherit-product, vendor/lineage/config/common_full_tv.mk)
 PRODUCT_DEVICE := pearlyn
 PRODUCT_NAME := lineage_pearlyn
 PRODUCT_MODEL := Forge
+PRODUCT_BRAND := razer
+PRODUCT_MANUFACTURER := razer
 TARGET_VENDOR := razer
 
 # LANGUAGE SET
