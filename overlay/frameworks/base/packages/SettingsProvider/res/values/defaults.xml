@@ -22,4 +22,6 @@
     <bool name="def_backup_enabled">true</bool>
     <bool name="def_lockscreen_disabled">true</bool>
     <string name="def_location_providers_allowed" translatable="false"></string>
+    <bool name="def_haptic_feedback">false</bool>
+    <bool name="def_accelerometer_rotation">false</bool>
 </resources>
