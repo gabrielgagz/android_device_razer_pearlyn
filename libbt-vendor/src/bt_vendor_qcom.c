@@ -225,6 +225,9 @@ static int get_bt_soc_type()
         else if (!strncasecmp(bt_soc_type, "cherokee", sizeof("cherokee"))) {
             return BT_SOC_CHEROKEE;
         }
+        else if (!strncasecmp(bt_soc_type, "hastings", sizeof("hastings"))) {
+            return BT_SOC_HASTINGS;
+        }
         else {
             ALOGI("vendor.qcom.bluetooth.soc not set, so using default.\n");
             return BT_SOC_DEFAULT;
@@ -806,6 +809,7 @@ static int __op(bt_vendor_opcode_t opcode, void *param)
                     case BT_SOC_ROME:
                     case BT_SOC_AR3K:
                     case BT_SOC_CHEROKEE:
+                    case BT_SOC_HASTINGS:
                         if (q->soc_type == BT_SOC_ROME)
                         {
                             if (nState == BT_VND_PWR_ON)
