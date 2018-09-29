@@ -169,18 +169,16 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libgenlock \
-    libqdutils \
-    libqservice \
     tinymix
     
  # Display
 PRODUCT_PACKAGES += \
-	libqdutils \
 	libc2dcolorconvert \
+	libgenlock \
 	libmm-omxcore \
 	libstagefrighthw \
 	liboverlay \
+	libqdutils \
 	libqservice \
 	libvirtual \
     gralloc.apq8084 \
