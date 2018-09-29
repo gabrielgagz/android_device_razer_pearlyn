@@ -34,5 +34,24 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan; \
 		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/WCNSS_qcom_wlan_nv.bin; \
 	ln -sf /persist/wlan_mac.bin \
 		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/wlan_mac.bin)
+		
+# Create links for bluetooth firmware files
+$(shell mkdir -p $(TARGET_OUT)/vendor/firmware; \
+	ln -sf /system/etc/firmware/nvm_tlv.bin \
+		$(TARGET_OUT)/vendor/firmware/nvm_tlv.bin;\
+	ln -sf /system/etc/firmware/nvm_tlv_1.3.bin \
+		$(TARGET_OUT)/vendor/firmware/nvm_tlv_1.3.bin;\
+	ln -sf /system/etc/firmware/nvm_tlv_2.1.bin \
+		$(TARGET_OUT)/vendor/firmware/nvm_tlv_2.1.bin;\
+	ln -sf /system/etc/firmware/nvm_tlv_3.0.bin \
+		$(TARGET_OUT)/vendor/firmware/nvm_tlv_3.0.bin;\
+	ln -sf /system/etc/firmware/rampatch_tlv.img \
+		$(TARGET_OUT)/vendor/firmware/rampatch_tlv.img;\
+	ln -sf /system/etc/firmware/rampatch_tlv_1.3.tlv \
+		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_1.3.tlv;\
+	ln -sf /system/etc/firmware/rampatch_tlv_2.1.tlv \
+		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_2.1.tlv;\
+	ln -sf /system/etc/firmware/rampatch_tlv_3.0.tlv \
+		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_3.0.tlv;)
 				
 endif
