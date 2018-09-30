@@ -74,12 +74,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
     
-# Bluetooth
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/auto_pair_devlist.conf:system/etc/auto_pair_devlist.conf \
-    $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bt_did.conf \
-    $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bt_stack.conf
-    
 # Sys Init
 PRODUCT_PACKAGES += \
     hcidump.sh \
