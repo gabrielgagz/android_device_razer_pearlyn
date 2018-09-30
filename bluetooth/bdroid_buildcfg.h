@@ -27,14 +27,11 @@
 
 #define BTM_DEF_LOCAL_NAME "Razer Forge TV"
 
-#include "btm_localname.h"
-
 #define MAX_ACL_CONNECTIONS    16
 #define MAX_L2CAP_CHANNELS    16
 
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 
-#define BLE_VND_INCLUDED   TRUE
 #define BLE_PRIVACY_SPT    FALSE
 #define BTIF_HF_WBS_PREFERRED FALSE /* Don't prefer WBS    */
 
