@@ -27,7 +27,6 @@ TARGET_BOARD_PLATFORM := apq8084
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno420
 BOARD_GLOBAL_CFLAGS += -ffast-math -fweb
 BOARD_GLOBAL_CFLAGS += -ffast-math -fweb
-HAVE_ADRENO_SOURCE:= false
 BOARD_USES_QCOM_HARDWARE := true
 
 # Kernel
