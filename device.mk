@@ -148,7 +148,6 @@ PRODUCT_COPY_FILES += \
     
 # Build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
-	net.bt.name=Forge \
 	dalvik.vm.dex2oat-swap=false \
 	ro.product.first_api_level=22 \
 	ro.com.google.clientidbase=android-pearlyn
