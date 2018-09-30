@@ -256,7 +256,6 @@ on fs
 
 # msm specific files that need to be created on /data
 on post-fs-data
-	setprop persist.sys.display.resolution 1920x1080
 	mount debugfs debugfs /sys/kernel/debug mode=0755
     mount tracefs tracefs /sys/kernel/debug/tracing mode=0755
 
