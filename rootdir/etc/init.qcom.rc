@@ -47,8 +47,6 @@ on early-init
     symlink /system/vendor/firmware/widevine.b03 /firmware/image/widevine.b03
     symlink /system/vendor/firmware/widevine.mbn /firmware/image/widevine.mbn
     symlink /system/vendor/firmware/widevine.mdt /firmware/image/widevine.mdt
-    
-    symlink /data/tombstones /tombstones
 
 on init
     # Set permissions for persist partition
