@@ -62,7 +62,6 @@ ro.lockscreen.disable.default=1
 qcom.bluetooth.soc=rome
 persist.fuse_sdcard=true
 ro.radio.noril=yes
-ro.sys.sdcardfs=false
 
 # Drm
 drm.service.enabled=true
