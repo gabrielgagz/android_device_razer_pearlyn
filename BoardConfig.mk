@@ -125,10 +125,8 @@ BOARD_HAVE_CAMERA := false
 BOARD_USES_QC_TIME_SERVICES := true
 
 # SELinux
-BOARD_SEPOLICY_VERS := 28.0
-# BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-#-include device/qcom/sepolicy/sepolicy.mk
-#-include device/qcom/sepolicy/legacy-sepolicy.mk
+# -include device/qcom/sepolicy/sepolicy.mk
+-include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Dex-preoptimization 
 DONT_DEXPREOPT_PREBUILTS := true

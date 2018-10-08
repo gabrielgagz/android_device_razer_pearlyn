@@ -1,1 +1,0 @@
-allow uncrypt kernel:system module_request;

@@ -1,4 +1,0 @@
-allow system_app proc_led_device:file { getattr open write };
-allow system_app persist_sys_rzr:file { getattr open read };
-allow system_app proc_usb_device:file { getattr open write };
-allow system_app persist_sys_rzr:property_service set;

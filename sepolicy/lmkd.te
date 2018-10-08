@@ -1,3 +1,0 @@
-allow lmkd kernel:system module_request;
-allow lmkd zygote:dir search;
-allow lmkd zygote:file { open write };

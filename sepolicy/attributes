@@ -1,3 +1,0 @@
-# All types used for tracefs files.
-attribute tracefs_type;
-attribute qti_debugfs_domain;

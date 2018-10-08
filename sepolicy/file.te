@@ -1,3 +1,0 @@
-type proc_led_device, file_type;
-type proc_usb_device, file_type;
-type data_default_values, file_type, data_file_type;

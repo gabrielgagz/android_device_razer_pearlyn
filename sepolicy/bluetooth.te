@@ -1,4 +1,0 @@
-# allow bluetooth default_prop:property_service set;
-allow bluetooth serial_device:chr_file { ioctl open read write };
-allow bluetooth sysfs:file write;
-allow bluetooth razer_prop:file { getattr open read };

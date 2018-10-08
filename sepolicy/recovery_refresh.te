@@ -1,1 +1,0 @@
-allow recovery_refresh kernel:system module_request;

@@ -1,2 +1,0 @@
-genfscon proc /usb_device u:object_r:proc_usb_device:s0
-genfscon proc /led_device u:object_r:proc_led_device:s0

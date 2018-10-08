@@ -1,7 +1,0 @@
-allow system_server self:capability sys_module;
-allow system_server zygote:binder { call transfer };
-allow system_server radio_noril_prop:file { getattr open read };
-allow system_server user_profile_data_file:dir { open read };
-allow system_server zygote:process setsched;
-allow system_server user_profile_data_file:dir write;
-allow system_server unlabeled:file unlink;
