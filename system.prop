@@ -69,3 +69,6 @@ drm.service.enabled=true
 
 # Qualcomm
 ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
+
+# Vendor security patch level
+ro.vendor.build.security_patch=2016-06-01
