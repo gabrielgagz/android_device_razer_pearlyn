@@ -56,6 +56,7 @@ PRODUCT_PACKAGES += \
     
 # Media
 PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/configs/media/audio_effects.xml:system/vendor/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/media/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/configs/media/audio_platform_info_i2s.xml:system/vendor/etc/audio_platform_info_i2s.xml \
     $(LOCAL_PATH)/configs/media/audio_policy.conf:system/vendor/etc/audio_policy.conf \
