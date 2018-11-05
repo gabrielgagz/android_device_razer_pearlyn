@@ -72,3 +72,6 @@ ro.vendor.extension_library=/system/vendor/lib/libqc-opt.so
 
 # UI
 sys.use_fifo_ui=1
+
+# Vendor security patch level
+ro.vendor.build.security_patch=2016-06-01
