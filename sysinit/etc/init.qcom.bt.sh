@@ -202,7 +202,7 @@ esac
 
 start_hciattach ()
 {
-  /system/bin/hciattach -n $BTS_DEVICE $BTS_TYPE $BTS_BAUD &
+  /system/vendor/bin/hciattach -n $BTS_DEVICE $BTS_TYPE $BTS_BAUD &
   hciattach_pid=$!
   logi "start_hciattach: pid = $hciattach_pid"
   echo 1 > $BLUETOOTH_SLEEP_PATH
