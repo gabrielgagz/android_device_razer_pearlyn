@@ -74,7 +74,7 @@ config_bt ()
   else
     soc_hwid=`cat /sys/devices/system/soc/soc0/id`
   fi
-  btsoc=`getprop qcom.bluetooth.soc`
+  btsoc=`getprop vendor.qcom.bluetooth.soc`
 
   case $baseband in
     "apq")
@@ -262,7 +262,7 @@ case $STACK in
     ;;
     *)
        logi "** Bluedroid stack **"
-       setprop bluetooth.status off
+       setprop vendor.bluetooth.status off
     ;;
 esac
 
@@ -302,7 +302,7 @@ case $exit_code_hci_qcomm_init in
          ;;
          *)
             logi "** Bluedroid stack **"
-            setprop bluetooth.status off
+            setprop vendor.bluetooth.status off
         ;;
      esac
 
@@ -321,7 +321,7 @@ case $TRANSPORT in
            ;;
            *)
               logi "** Bluedroid stack **"
-              setprop bluetooth.status on
+              setprop vendor.bluetooth.status on
            ;;
        esac
      ;;
@@ -334,7 +334,7 @@ case $TRANSPORT in
             ;;
             *)
                logi "** Bluedroid stack **"
-               setprop bluetooth.status on
+               setprop vendor.bluetooth.status on
             ;;
         esac
 
