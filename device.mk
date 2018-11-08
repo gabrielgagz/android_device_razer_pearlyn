@@ -116,7 +116,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-swap=false \
 	ro.product.first_api_level=22 \
-	ro.com.google.clientidbase=android-pearlyn
+	ro.com.google.clientidbase=android-pearlyn \
+	ro.sf.lcd_density=320
     
 # Audio
 PRODUCT_PACKAGES += \
