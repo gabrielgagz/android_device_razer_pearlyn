@@ -166,6 +166,7 @@ PRODUCT_PACKAGES += \
 	libOmxVdpp \
 	libOmxVenc \
 	libQWiFiSoftApCfg \
+	librmnetctl \
 	libtinyxml2 \
 	libtinyxml \
 	libwifi-hal-qcom \
@@ -179,6 +180,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	cplay \
 	hostapd \
+	rmnetcli \
 	setup_fs \
 	tinycap \
 	tinypcminfo \
