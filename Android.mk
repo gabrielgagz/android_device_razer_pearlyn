@@ -32,6 +32,8 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan; \
 		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini;\
 	ln -sf /system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
 		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/WCNSS_qcom_wlan_nv.bin; \
+	ln -sf /system/etc/wifi/WCNSS_cfg.dat \
+		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat; \
 	ln -sf /persist/wlan_mac.bin \
 		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/wlan_mac.bin)
 		
