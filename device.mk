@@ -83,8 +83,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sdio.sh \
     init.qcom.wifi.sh \
     qca6234-service.sh \
-    usf_post_boot.sh \
-    vold.fstab \
     usf_post_boot.sh
     
 PRODUCT_COPY_FILES += \
