@@ -109,14 +109,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
-    $(LOCAL_PATH)/etc/permissions/tv_features.xml:system/etc/permissions/tv_features.xml \
-    $(LOCAL_PATH)/etc/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
-    $(LOCAL_PATH)/etc/permissions/dpmapi.xml:system/etc/permissions/dpmapi.xml \
-    $(LOCAL_PATH)/etc/permissions/android.hardware.type.television.xml:system/etc/permissions/android.hardware.type.television.xml \
-    $(LOCAL_PATH)/etc/permissions/ConnectivityExt.xml:system/etc/permissions/ConnectivityExt.xml \
-    $(LOCAL_PATH)/etc/permissions/com.quicinc.cne.xml:system/etc/permissions/com.quicinc.cne.xml \
-    $(LOCAL_PATH)/etc/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
-    $(LOCAL_PATH)/etc/permissions/nrdp.modelgroup.xml:system/etc/permissions/nrdp.modelgroup.xml
+    $(LOCAL_PATH)/configs/permissions/tv_features.xml:system/etc/permissions/tv_features.xml \
+    $(LOCAL_PATH)/configs/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
+    $(LOCAL_PATH)/configs/permissions/dpmapi.xml:system/etc/permissions/dpmapi.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.type.television.xml:system/etc/permissions/android.hardware.type.television.xml \
+    $(LOCAL_PATH)/configs/permissions/ConnectivityExt.xml:system/etc/permissions/ConnectivityExt.xml \
+    $(LOCAL_PATH)/configs/permissions/com.quicinc.cne.xml:system/etc/permissions/com.quicinc.cne.xml \
+    $(LOCAL_PATH)/configs/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
+    $(LOCAL_PATH)/configs/permissions/nrdp.modelgroup.xml:system/etc/permissions/nrdp.modelgroup.xml
         
 # Wifi Config
 PRODUCT_COPY_FILES += \
