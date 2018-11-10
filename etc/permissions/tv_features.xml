@@ -1,6 +1,6 @@
 <permissions>
 
-<!-- These are the hardware components Pearlyn uses.
+<!-- These are the hardware components that television devices include.
 -->
 <feature name="android.hardware.audio.low_latency" />
 <feature name="android.hardware.bluetooth" />
@@ -9,7 +9,6 @@
 <feature name="android.hardware.hdmi.cec" />
 <feature name="android.hardware.location" />
 <feature name="android.hardware.location.network" />
-<feature name="android.hardware.opengles.aep" />
 <feature name="android.hardware.screen.landscape" />
 <feature name="android.hardware.type.television" />
 <feature name="android.hardware.usb.accessory" />
@@ -17,14 +16,10 @@
 <feature name="android.hardware.wifi" />
 <feature name="android.hardware.wifi.direct" />
 
-<feature name="android.software.app_widgets" />
 <feature name="android.software.backup" />
-<feature name="android.software.device_admin" />
 <feature name="android.software.input_methods" />
 <feature name="android.software.leanback" />
 <feature name="android.software.leanback_only" />
-<feature name="android.software.managed_users" />
-<feature name="android.software.midi" />
 <feature name="android.software.voice_recognizers" />
 <feature name="android.software.webview" />
 
