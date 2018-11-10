@@ -84,9 +84,11 @@ PRODUCT_PACKAGES += \
     init.qcom.wifi.sh \
     qca6234-service.sh \
     usf_post_boot.sh \
-    sec_config \
     vold.fstab \
-    usf_post_boot.sh    
+    usf_post_boot.sh
+    
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:system/vendor/etc/sec_config        
     
 # LineageCustomizer & PearlynLed
 PRODUCT_PACKAGES += \
