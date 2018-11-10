@@ -58,6 +58,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/configs/media/audio_platform_info_i2s.xml:system/vendor/etc/audio_platform_info_i2s.xml \
     $(LOCAL_PATH)/configs/media/audio_policy.conf:system/vendor/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/media/audio_effects.xml:system/vendor/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/vendor/etc/media_profiles.xml \
