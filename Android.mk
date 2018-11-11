@@ -35,7 +35,9 @@ $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan; \
 	ln -sf /system/etc/wifi/WCNSS_cfg.dat \
 		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat; \
 	ln -sf /persist/wlan_mac.bin \
-		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/wlan_mac.bin)
+		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/wlan_mac.bin; \
+	ln -sf /persist/wlan_mac_serial.bin \
+		$(TARGET_OUT)/etc/firmware/wlan/qca_cld/wlan_mac_serial.bin)
 		
 # Create links for bluetooth firmware files
 $(shell mkdir -p $(TARGET_OUT)/vendor/firmware; \
