@@ -479,7 +479,7 @@ on property:wc_transport.start_root=false
 service hci_filter_root /system/vendor/bin/wcnss_filter
     class late_start
     user bluetooth
-    group bluetooth qcom_diag system
+    group bluetooth diag system
     disabled
 
 service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
@@ -965,7 +965,7 @@ service imsdatadaemon /system/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet net_raw log qcom_diag net_admin
+    group system wifi radio inet net_raw log diag net_admin
     disabled
 
 service mdm_helper /system/bin/mdm_helper
@@ -1010,7 +1010,7 @@ on property:vold.decrypt=trigger_reset_main
 service gnss-svcd /system/vendor/bin/gnss.qca1530.sh start
    class late_start
    user root
-   group gps system qcom_diag diag log inet net_raw
+   group gps system diag diag log inet net_raw
    disabled
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
@@ -1020,7 +1020,7 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
    class main
    user system
    socket ims_rtpd stream 0660 system radio
-   group radio net_raw diag qcom_diag log inet
+   group radio net_raw diag diag log inet
    disabled
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
