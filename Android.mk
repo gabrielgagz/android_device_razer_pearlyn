@@ -56,6 +56,6 @@ $(shell mkdir -p $(TARGET_OUT)/vendor/firmware; \
 	ln -sf /system/etc/firmware/rampatch_tlv_2.1.tlv \
 		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_2.1.tlv;\
 	ln -sf /system/etc/firmware/rampatch_tlv_3.0.tlv \
-		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_3.0.tlv;)
+		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_3.0.tlv)
 				
 endif
