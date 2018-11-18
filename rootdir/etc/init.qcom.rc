@@ -105,9 +105,12 @@ on boot
     chown bluetooth bluetooth /dev/ttyHS0
     chmod 0660 /sys/module/hci_uart/parameters/ath_lpm
     chmod 0660 /sys/module/hci_uart/parameters/ath_btwrite
-    chmod 0660 /dev/ttyHS0
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
+    
+# permissions for bluetooth.
+    chmod 0660 /dev/ttyHS0
+    chmod 0660 /sys/class/rfkill/rfkill0/state    
 
 # update foreground cpuset now that processors are up
      write /dev/cpuset/foreground/cpus 0-3
@@ -115,10 +118,6 @@ on boot
      write /dev/cpuset/background/cpus 0
      write /dev/cpuset/system-background/cpus 0-1
 
-    chmod 0660 /dev/ttyHS2
-    chown bluetooth bluetooth /dev/ttyHS2
-
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
     #Create QMUX deamon socket area
@@ -405,31 +404,6 @@ on property:ro.board.platform=msm7630_fusion
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
-on property:bluetooth.isEnabled=true
-    start btwlancoex
-    write /sys/class/bluetooth/hci0/idle_timeout 7000
-
-on property:bluetooth.sap.status=running
-    start bt-sap
-
-on property:bluetooth.sap.status=stopped
-    stop bt-sap
-
-on property:bluetooth.dun.status=running
-    start bt-dun
-
-on property:bluetooth.dun.status=stopped
-    stop bt-dun
-
-on property:ro.bluetooth.ftm_enabled=true
-    start ftmd
-
-on property:bluetooth.startbtsnoop=true
-    start btsnoop
-
-on property:bluetooth.startbtsnoop=false
-    stop btsnoop
-
 service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     class core
     user root
@@ -468,36 +442,11 @@ on property:wc_transport.start_hci=true
 on property:wc_transport.start_hci=false
     stop start_hci_filter
 
-service start_hci_filter /system/vendor/bin/wcnss_filter
-    class late_start
-    user bluetooth
-    group bluetooth diag
-    disabled
-
 on property:wc_transport.start_root=true
     start hci_filter_root
 
 on property:wc_transport.start_root=false
     stop hci_filter_root
-
-service hci_filter_root /system/vendor/bin/wcnss_filter
-    class late_start
-    user bluetooth
-    group bluetooth diag system
-    disabled
-
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
-on property:vendor.bluetooth.hciattach=true
-    start hciattach
-
-on property:vendor.bluetooth.hciattach=false
-    setprop vendor.bluetooth.status off
 
 service hciattach_ath3k /system/bin/sh /system/etc/init.ath3k.bt.sh
      class late_start
@@ -505,27 +454,6 @@ service hciattach_ath3k /system/bin/sh /system/etc/init.ath3k.bt.sh
      group system bluetooth net_bt_admin misc
      disabled
      oneshot
-
-service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin inet
-    disabled
-    oneshot
-
-service bt-sap /system/bin/sapd 15
-    user bluetooth
-    group bluetooth net_bt_admin
-    class late_start
-    disabled
-    oneshot
-
-service btsnoop /system/bin/btsnoop
-   user bluetooth
-   group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
-   class late_start
-   disabled
-   oneshot
 
 service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
     class late_start

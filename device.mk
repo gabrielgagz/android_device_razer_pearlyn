@@ -81,7 +81,6 @@ PRODUCT_PACKAGES += \
     init.ath3k.bt.sh \
     init.crda.sh \
     init.qcom.audio.sh \
-    init.qcom.bt.sh \
     init.qcom.coex.sh \
     init.qcom.efs.sync.sh \
     init.qcom.fm.sh \
