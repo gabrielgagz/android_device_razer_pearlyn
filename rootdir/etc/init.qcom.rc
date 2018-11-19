@@ -87,6 +87,8 @@ on early-boot
     # write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
     write /sys/kernel/boot_adsp/boot 1
     exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
+    
+    start program_bdaddr
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -209,8 +211,6 @@ on boot
     chown system system /sys/class/leds/green/blink
     # Enable writing to brightness node under torch-light from userspace
     chown system system /sys/class/leds/torch-light/brightness
-    
-    start program_bdaddr
     
 on fs
 
