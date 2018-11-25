@@ -453,7 +453,7 @@ on property:ro.boot.emmc=true
 service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
     class late_start
     user root
-    group bluetooth net_bt_admin misc bluetooth diag
+    group bluetooth net_bt_admin misc bluetooth oem_2950
     disabled
     oneshot
 
@@ -467,7 +467,7 @@ service port-bridge /system/bin/port-bridge /dev/mhi_pipe_32 /dev/ttyGS0
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps diag
+    group radio audio bluetooth gps oem_2950
     disabled
 
 service netmgrd /system/bin/netmgrd
@@ -660,7 +660,7 @@ service ril-daemon1 /system/bin/rild -c 1
     socket rild-debug1 stream 660 radio system
     user root
     disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag log
+    group radio cache inet misc audio sdcard_r sdcard_rw oem_2950 log
 
 service ril-daemon2 /system/bin/rild -c 2
     class main
@@ -668,7 +668,7 @@ service ril-daemon2 /system/bin/rild -c 2
     socket rild-debug2 stream 660 radio system
     user root
     disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag log
+    group radio cache inet misc audio sdcard_r sdcard_rw oem_2950 log
 
 service profiler_daemon /system/bin/profiler_daemon
     class late_start
@@ -722,14 +722,14 @@ service charger_monitor /system/bin/charger_monitor
 service diag_mdlog_start /system/bin/diag_mdlog
     class late_start
     user shell
-    group system diag sdcard_rw sdcard_r media_rw
+    group system oem_2950 sdcard_rw sdcard_r media_rw
     disabled
     oneshot
 
 service diag_mdlog_stop /system/bin/diag_mdlog -k
     class late_start
     user shell
-    group system diag sdcard_rw sdcard_r media_rw
+    group system oem_2950 sdcard_rw sdcard_r media_rw
     disabled
     oneshot
 
@@ -754,7 +754,7 @@ on property:persist.sys.rzr.device_mode=1
 	stop adbd
 	
 on property:ro.build.type=user
-    rm /dev/diag	
+    rm /dev/oem_2950	
 
 on property:sys.boot_completed=1
 	swapon_all fstab.qcom
@@ -831,7 +831,7 @@ service imsdatadaemon /system/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet net_raw log diag net_admin
+    group system wifi radio inet net_raw log oem_2950 net_admin
     disabled
 
 service mdm_helper /system/bin/mdm_helper
@@ -876,7 +876,7 @@ on property:vold.decrypt=trigger_reset_main
 service gnss-svcd /system/vendor/bin/gnss.qca1530.sh start
    class late_start
    user root
-   group gps system diag diag log inet net_raw
+   group gps system oem_2950 log inet net_raw
    disabled
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
@@ -886,7 +886,7 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
    class main
    user system
    socket ims_rtpd stream 0660 system radio
-   group radio net_raw diag diag log inet
+   group radio net_raw oem_2950 log inet
    disabled
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
