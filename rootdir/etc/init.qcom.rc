@@ -433,6 +433,19 @@ service irsc_util /system/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
     oneshot
+    
+on property:vendor.wc_transport.start_hci=true
+    start start_hci_filter
+
+on property:vendor.wc_transport.start_hci=false
+    stop start_hci_filter
+
+service start_hci_filter /system/vendor/bin/wcnss_filter
+    class late_start
+    user bluetooth
+    group bluetooth oem_2950 system wakelock
+    disabled
+    writepid /dev/cpuset/system-background/tasks 
 
 on property:ro.boot.emmc=true
     start rfs_access
