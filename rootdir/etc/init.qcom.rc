@@ -754,7 +754,7 @@ on property:persist.sys.rzr.device_mode=1
 	stop adbd
 	
 on property:ro.build.type=user
-    rm /dev/oem_2950	
+    rm /dev/diag
 
 on property:sys.boot_completed=1
 	swapon_all fstab.qcom
