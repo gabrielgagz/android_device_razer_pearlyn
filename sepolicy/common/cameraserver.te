@@ -1,4 +1,0 @@
-allow cameraserver sysfs_camera:dir search;
-allow cameraserver sysfs_camera:file { open read };
-allow cameraserver camera_socket:sock_file w_file_perms;
-allow cameraserver vendor_file:file execmod;
