@@ -128,7 +128,7 @@ BOARD_HAVE_CAMERA := false
 BOARD_USES_QC_TIME_SERVICES := true
 
 # SELinux
-# -include device/qcom/sepolicy/sepolicy.mk
+#-include device/qcom/sepolicy/sepolicy.mk
 -include device/qcom/sepolicy/legacy-sepolicy.mk
 
 # Dex-preoptimization 
@@ -147,6 +147,12 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+BOARD_HAS_NO_REAL_SDCARD := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 LZMA_RAMDISK_TARGETS := recovery
 
 # Binder API version
