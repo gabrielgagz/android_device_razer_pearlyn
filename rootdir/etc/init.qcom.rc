@@ -437,6 +437,20 @@ service irsc_util /system/bin/irsc_util "/vendor/etc/sec_config"
     user root
     oneshot
     
+on property:vendor.bluetooth.hciattach=true
+    start hciattach
+    setprop vendor.bluetooth.status on
+    
+on property:vendor.bluetooth.hciattach=false
+    setprop vendor.bluetooth.status off        
+    
+service hciattach /system/vendor/bin/hci_qcomm_init -e
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+    
 on property:vendor.wc_transport.start_hci=true
     start start_hci_filter
 
