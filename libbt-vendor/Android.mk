@@ -65,7 +65,7 @@ LOCAL_HEADER_LIBRARIES := \
         generated_kernel_headers \
         libutils_headers
 
-LOCAL_MODULE := libbt-vendor
+LOCAL_MODULE := libbt-vendor.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_OWNER := qcom

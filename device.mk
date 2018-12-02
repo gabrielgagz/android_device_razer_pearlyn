@@ -161,6 +161,10 @@ PRODUCT_PACKAGES += \
     hdmi_cec.apq8084 \
     lights.apq8084 \
     memtrack.apq8084
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+	libbt-vendor.apq8084
     
 # Keystore
 PRODUCT_PACKAGES += \
