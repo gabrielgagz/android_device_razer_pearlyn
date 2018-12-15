@@ -13,7 +13,7 @@
      limitations under the License.
 -->
 
-<manifest android:versionCode="1" android:versionName="1.0" package="com.cyanogenmod.pearlynled" platformBuildVersionCode="25" platformBuildVersionName="7.1.2"
+<manifest android:versionCode="1" android:versionName="1.0" package="org.lineageos.pearlynled" platformBuildVersionCode="25" platformBuildVersionName="7.1.2"
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:sharedUserId="android.uid.system"
   coreApp="true">
@@ -21,13 +21,13 @@
  <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
         <application android:label="@string/app_name"
 					 android:persistent="true" >
-		<receiver android:name="com.cyanogenmod.pearlynled.BootCompletedReceiver">
+		<receiver android:name="org.lineageos.pearlynled.BootCompletedReceiver">
 		<intent-filter>
 			<action android:name="android.intent.action.BOOT_COMPLETED" />
         </intent-filter>
         </receiver>
   
-		<service android:name="com.cyanogenmod.pearlynled.PearlynLedService"
+		<service android:name="org.lineageos.pearlynled.PearlynLedService"
         android:enabled="true"
         android:exported="true">
         </service>

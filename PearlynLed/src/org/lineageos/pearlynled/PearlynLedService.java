@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.pearlynled;
+package org.lineageos.pearlynled;
  
 import android.app.Service;
 import android.content.Intent;
