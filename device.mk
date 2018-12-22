@@ -118,6 +118,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.first_api_level=22 \
 	ro.com.google.clientidbase=android-pearlyn \
 	ro.sf.lcd_density=320
+	
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.am.reschedule_service=true \
+    ro.vendor.qti.sys.fw.bservice_enable=true	
     
 # Audio
 PRODUCT_PACKAGES += \
