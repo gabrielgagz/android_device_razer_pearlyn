@@ -625,8 +625,8 @@ service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     oneshot
 
 on property:crypto.driver.load=1
-     insmod /system/lib/modules/qce.ko
-     insmod /system/lib/modules/qcedev.ko
+     insmod /system/vendor/lib/modules/qce.ko
+     insmod /system/vendor/lib/modules/qcedev.ko
 
 service drmdiag /system/bin/drmdiagapp
     class late_start
