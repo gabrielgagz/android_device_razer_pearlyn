@@ -88,6 +88,9 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
     
+    # Load qcacld-2.0 wifi driver
+    insmod /system/vendor/lib/modules/wlan.ko con_mode=5	
+ 
     start program_bdaddr
 
 on boot
