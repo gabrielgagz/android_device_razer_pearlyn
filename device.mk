@@ -201,8 +201,12 @@ PRODUCT_PACKAGES += \
 	setup_fs \
 	tinycap \
 	tinypcminfo \
-	tinyplay \
-	wpa_supplicant
+	tinyplay
+	
+# Wpa Supplicant
+PRODUCT_PACKAGES += \
+	wpa_supplicant \
+	wpa_supplicant.conf
 	
 # Without this filter, we get very close to the limit.
 PRODUCT_DEX_PREOPT_DEFAULT_FLAGS += --compiler-filter=space
