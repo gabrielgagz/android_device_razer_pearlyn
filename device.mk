@@ -186,7 +186,6 @@ PRODUCT_PACKAGES += \
 	librmnetctl \
 	libtinyxml2 \
 	libtinyxml \
-	libwifi-hal-qcom \
 	libcommon_time_client \
 	libjhead_jni \
 	libjhead \
