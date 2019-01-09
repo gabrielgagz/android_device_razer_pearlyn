@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <audio_effects_conf version="2.0" xmlns="http://schemas.android.com/audio/audio_effects_conf/v2_0">
     <libraries>
-        <library name="proxy" path="/vendor/lib/libeffectproxy.so"/>
-        <library name="bundle" path="/vendor/lib/libbundlewrapper.so"/>
-        <library name="reverb" path="/vendor/lib/libreverbwrapper.so"/>
-        <library name="visualizer_sw" path="/vendor/lib/libvisualizer.so"/>
-        <library name="visualizer_hw" path="/vendor/lib/libqcomvisualizer.so"/>
-        <library name="downmix" path="/vendor/lib/libdownmix.so"/>
-        <library name="loudness_enhancer" path="/vendor/lib/libldnhncr.so"/>
-        <library name="pre_processing" path="/vendor/lib/libqcomvoiceprocessing.so"/>
+        <library name="proxy" path="/vendor/lib/soundfx/libeffectproxy.so"/>
+        <library name="bundle" path="/vendor/lib/soundfx/libbundlewrapper.so"/>
+        <library name="reverb" path="/vendor/lib/soundfx/libreverbwrapper.so"/>
+        <library name="visualizer_sw" path="/vendor/lib/soundfx/libvisualizer.so"/>
+        <library name="visualizer_hw" path="/vendor/lib/soundfx/libqcomvisualizer.so"/>
+        <library name="downmix" path="/vendor/lib/soundfx/libdownmix.so"/>
+        <library name="loudness_enhancer" path="/vendor/lib/soundfx/libldnhncr.so"/>
+        <library name="pre_processing" path="/vendor/lib/soundfx/libqcomvoiceprocessing.so"/>
     </libraries>
     <effects>
         <effect name="bassboost" library="bundle" uuid="8631f300-72e2-11df-b57e-0002a5d5c51b"/>
