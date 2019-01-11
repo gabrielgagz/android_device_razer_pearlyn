@@ -245,6 +245,8 @@ on fs
     # Set a default date
     start razerdate
     
+    restorecon_recursive /cache/recovery    
+    
 on post-fs
     # Allow writing to the kernel trace log.
     chmod 0222 /sys/kernel/debug/tracing/trace_marker             
