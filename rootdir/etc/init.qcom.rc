@@ -910,9 +910,3 @@ service adsprpcd /system/bin/adsprpcd
    class main
    user media
    group media
-
-service program_bdaddr /system/vendor/bin/init.program_bdaddr.sh
-    user bluetooth
-    group bluetooth
-    disabled
-    oneshot
