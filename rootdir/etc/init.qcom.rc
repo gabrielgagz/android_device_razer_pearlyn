@@ -793,6 +793,7 @@ service mpdecision /system/bin/mpdecision --avg_comp --min_cores=4
    class main
    user root
    group root readproc
+   writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class hal
