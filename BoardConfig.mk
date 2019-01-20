@@ -128,6 +128,10 @@ WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 BOARD_HAVE_NFC := false
 BOARD_HAVE_CAMERA := false
 
+# Exclude deprecated healthd from framework manifest
+DEVICE_FRAMEWORK_MANIFEST_FILE += \
+    system/libhidl/vintfdata/manifest_healthd_exclude.xml
+
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
 
