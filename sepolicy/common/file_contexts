@@ -70,10 +70,6 @@
 /sys/devices/qcom,mdm1.[0-9]+/esoc[0-9]/subsys3/restart_level                                u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/qcom,mdm1.[0-9]+/esoc[0-9]/subsys3/recovery_policy                              u:object_r:sysfs_ssr_toggle:s0
 
-# sysfs - net
-/sys/devices/msm_sdcc\.[0-9]/mmc_host/.*/net(/.*)?      u:object_r:sysfs_net:s0
-/sys/devices/virtual/net(/.*)?                          u:object_r:sysfs_net:s0
-
 # sysfs - sensors
 /sys/devices/virtual/sensors(/.*)?                      u:object_r:sysfs_sensors:s0
 
