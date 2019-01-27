@@ -50,6 +50,8 @@ PRODUCT_PACKAGES += \
     init.qcom.ssr.sh \
     init.qcom.syspart_fixup.sh \
     init.qcom.usb.rc \
+    init.recovery.qcom.rc \
+    init.recovery.recovery.rc \
     init.trace.rc \
     ueventd.qcom.rc    
     
