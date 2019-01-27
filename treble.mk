@@ -41,7 +41,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
     android.hardware.health@2.0-service \
-    android.hardware.health@2.0-service.override    
+    android.hardware.health@2.0-service.override
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -67,12 +67,12 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.1-impl \
-    android.hardware.thermal@1.1-service    
+    android.hardware.thermal@1.1-service
     
 # TV
 PRODUCT_PACKAGES += \
     android.hardware.tv.cec@1.0-impl \
-    android.hardware.tv.input@1.0-impl       
+    android.hardware.tv.input@1.0-impl
 
 # USB
 PRODUCT_PACKAGES += \
