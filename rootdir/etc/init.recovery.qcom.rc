@@ -1,5 +1,2 @@
-on init
-	setprop sys.usb.config mtp
-	setprop persist.sys.rzr.device_mode 1
-	write /proc/usb_device 1
-	stop adbd
+on fs
+	setprop sys.usb.ffs.aio_compat 1
