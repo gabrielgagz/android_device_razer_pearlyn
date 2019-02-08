@@ -13,8 +13,6 @@ on boot
     chmod 664 /sys/devices/system/cpu/cpu1/online
     chmod 664 /sys/devices/system/cpu/cpu2/online
     chmod 664 /sys/devices/system/cpu/cpu3/online
-    
-on property:sys.boot_completed=1    
 
     # Configure the hardware properly
     write /sys/module/lpm_levels/enable_low_power/l2 4
