@@ -149,6 +149,9 @@ WITH_LZMA_OTA:= true
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := firmware persist
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 BOARD_HAS_NO_REAL_SDCARD := true
