@@ -455,10 +455,10 @@ service hciattach /vendor/bin/hci_qcomm_init -e
     disabled
     oneshot
     
-on property:wc_transport.start_hci=true
+on property:vendor.wc_transport.start_hci=true
     start start_hci_filter
 
-on property:wc_transport.start_hci=false
+on property:vendor.wc_transport.start_hci=false
     stop start_hci_filter
 
 service start_hci_filter /vendor/bin/wcnss_filter
