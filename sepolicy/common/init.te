@@ -43,6 +43,7 @@ allow init {
     sysfs_usb_otg
     sysfs_usb_storage_gadget
     sysfs_wifi_writeable
+    sysfs_wlan_fwpath
 }:file setattr;
 
 allow init {
