@@ -1,7 +1,5 @@
 get_prop(system_server, alarm_boot_prop)
 
-allow system_server efs_file:dir search;
-allow system_server efs_file:file r_file_perms;
 allow system_server mpctl_data_file:dir search;
 allow system_server mpctl_data_file:sock_file w_file_perms;
 allow system_server mpdecision:unix_stream_socket connectto;

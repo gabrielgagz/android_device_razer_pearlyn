@@ -1,3 +1,0 @@
-allow nfc nfc_fw_file:file rx_file_perms;
-allow nfc nfc_data_file:dir r_dir_perms;
-allow nfc nfc_data_file:file rw_file_perms;

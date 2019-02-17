@@ -1,8 +1,2 @@
 service.camera.hdmi_preview                      u:object_r:camera_prop:s0
-persist.ril.radiocapa.tdscdma                    u:object_r:net_radio_prop:s0
-persist.ril.modem.board                          u:object_r:net_radio_prop:s0
-persist.ril.ims.eutranParam                      u:object_r:net_radio_prop:s0
-persist.ril.ims.utranParam                       u:object_r:net_radio_prop:s0
-persist.ril.xcap.pdnFailCause                    u:object_r:net_radio_prop:s0
-persist.ril.ims.pdnFailCause                     u:object_r:net_radio_prop:s0
 
