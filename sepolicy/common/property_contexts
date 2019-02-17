@@ -1,2 +1,3 @@
 service.camera.hdmi_preview                      u:object_r:camera_prop:s0
+persist.sys.rzr									 u:object_r:persist_sys_rzr:s0
 

@@ -90,3 +90,7 @@
 
 # sysfs - usb
 /sys/devices/virtual/host_notify/usb_otg(/.*)?               u:object_r:sysfs_usb_otg:s0
+
+# pearlyn specific
+/proc/led_device										u:object_r:proc_led_device:s0
+/proc/usb_device										u:object_r:proc_usb_device:s0
