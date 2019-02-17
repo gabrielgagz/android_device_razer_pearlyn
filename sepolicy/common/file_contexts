@@ -38,12 +38,6 @@
 /sys/devices/bt_qca6174.[0-9]+/rfkill/rfkill0/state              u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/virtual/sec/sec_key/hall_irq_ctrl                   u:object_r:sysfs_sec:s0
 
-# sysfs - battery/charger
-/sys/devices/battery\.[0-9]+/power_supply(/.*)?         u:object_r:sysfs_batteryinfo:s0
-/sys/devices/f9200000.ssusb/power_supply/dwc-usb(/.*)?  u:object_r:sysfs_batteryinfo:s0
-/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/max[a-z0-9]+-charger/power_supply(/.*)? u:object_r:sysfs_batteryinfo:s0
-/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/power_supply(/.*)?                      u:object_r:sysfs_batteryinfo:s0
-
 # sysfs - block/storage
 /sys/devices/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/bkops_en    u:object_r:sysfs_io_sched_tuneable:s0
 /sys/devices/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/power(/.*)?                                   u:object_r:sysfs_mmc_host:s0
