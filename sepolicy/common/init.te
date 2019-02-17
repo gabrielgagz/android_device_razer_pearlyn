@@ -50,6 +50,7 @@ allow init {
     sysfs_cpu_boost
     sysfs_devices_system_cpu
     sysfs_lowmemorykiller
+    sysfs_mhi_uci
     sysfs_mmc_host
     sysfs_msm_perf
     sysfs_msm_power

@@ -95,3 +95,6 @@
 
 # sysfs - rmnet
 /sys/module/rmnet_usb(/.*)?                             u:object_r:sysfs_rmnet:s0
+
+# sysfs - mhi_uci
+/sys/module/mhi_uci(/.*)?                               u:object_r:sysfs_mhi_uci:s0
