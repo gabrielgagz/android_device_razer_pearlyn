@@ -1,0 +1,4 @@
+allow mdm_helper kmsg_device:chr_file w_file_perms;
+allow mdm_helper sysfs_esoc:dir search;
+allow mdm_helper sysfs_esoc:file r_file_perms;
+allow mdm_helper diag_device:chr_file rw_file_perms;

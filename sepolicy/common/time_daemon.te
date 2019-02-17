@@ -1,0 +1,2 @@
+allow time_daemon sysfs_esoc:dir search;
+allow time_daemon sysfs_esoc:file r_file_perms;

@@ -1,0 +1,2 @@
+allow platform_app radio_data_file:dir search;
+allow platform_app radio_data_file:file r_file_perms;
