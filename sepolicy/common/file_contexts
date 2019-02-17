@@ -92,3 +92,6 @@
 # pearlyn specific
 /proc/led_device										u:object_r:proc_led_device:s0
 /proc/usb_device										u:object_r:proc_usb_device:s0
+
+# sysfs - rmnet
+/sys/module/rmnet_usb(/.*)?                             u:object_r:sysfs_rmnet:s0
