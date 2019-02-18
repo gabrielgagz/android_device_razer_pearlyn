@@ -5,7 +5,6 @@
 selinux_check_context(init)
 
 allow init debugfs:file rw_file_perms;
-allow init sysfs_mdnie:file setattr;
 allow init sysfs_iio:lnk_file read;
 allow init {
     sysfs_iio
@@ -34,27 +33,33 @@ allow init {
     sysfs_sec_key
     sysfs_sec_misc
     sysfs_sec_powerkey
+    sysfs_sec_thermistor
     sysfs_sec_touchkey
     sysfs_sec_switch
     sysfs_sec_tsp
     sysfs_sec_vib
     sysfs_sensors
-    sysfs_socinfo
+    sysfs_ssr_toggle
     sysfs_usb_otg
     sysfs_usb_storage_gadget
-    sysfs_wifi_writeable
     sysfs_wlan_fwpath
 }:file setattr;
 
 allow init {
+    proc_printk
+    sysfs_bluetooth_writable
     sysfs_cpu_boost
     sysfs_devices_system_cpu
+    sysfs_graphics
     sysfs_lowmemorykiller
-    sysfs_mhi_uci
     sysfs_mmc_host
+    sysfs_modules
     sysfs_msm_perf
     sysfs_msm_power
-    sysfs_rmnet
     sysfs_sec_key
+    sysfs_sec_thermistor
+    sysfs_sec_touchkey
+    sysfs_ssr_toggle
     sysfs_thermal
+    sysfs_usb_storage_gadget
 }:file w_file_perms;

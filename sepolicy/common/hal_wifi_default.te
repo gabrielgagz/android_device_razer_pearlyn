@@ -1,2 +1,1 @@
-allow hal_wifi_default sysfs_wifi_writeable:file w_file_perms;
 allow hal_wifi_default wifi_data_file:file r_file_perms;
