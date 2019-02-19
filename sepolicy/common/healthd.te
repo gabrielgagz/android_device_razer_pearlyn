@@ -1,0 +1,2 @@
+r_dir_file(healthd, sysfs_usb_supply)	
+allow healthd sysfs_usb_supply:file w_file_perms;
