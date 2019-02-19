@@ -212,6 +212,12 @@ on boot
     # Enable writing to brightness node under torch-light from userspace
     chown system system /sys/class/leds/torch-light/brightness
     
+    #Create PERFD deamon related dirs
+    mkdir /data/misc/perfd 0755 root system
+    chmod 2755 /data/misc/perfd
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
+    
 on fs
 
 	wait /dev/block/platform/${ro.boot.bootdevice}
