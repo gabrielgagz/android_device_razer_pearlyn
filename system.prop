@@ -77,6 +77,9 @@ ro.vendor.build.security_patch=2016-06-01
 # logd
 ro.logd.auditd.dmesg=false
 
+# disable chatty
+ro.logd.filter=disable
+
 # Dalvik heap
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=192m
