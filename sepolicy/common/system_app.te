@@ -1,6 +1,3 @@
-allow system_app sysfs_mdnie:dir search;
-allow system_app sysfs_mdnie:file rw_file_perms;
-
 # PearlynLed
 allow system_app proc_led_device:file { getattr open write };
 allow system_app persist_sys_rzr:file { getattr open read };

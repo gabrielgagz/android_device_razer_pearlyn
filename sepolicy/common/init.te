@@ -14,7 +14,6 @@ allow init {
 
 allow init {
     sysfs_audio
-    sysfs_batteryinfo
     sysfs_bluetooth_writable
     sysfs_camera
     sysfs_graphics
@@ -23,7 +22,6 @@ allow init {
     sysfs_input
     sysfs_kgsl
     sysfs_leds
-    sysfs_mdnie
     sysfs_sec_bsp
     sysfs_sec_led
     sysfs_sec_sdcard

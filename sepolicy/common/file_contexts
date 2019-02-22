@@ -11,7 +11,6 @@
 /dev/btlock                                             u:object_r:bluetooth_device:s0
 /dev/rfkill                                             u:object_r:wlan_device:s0
 /dev/ttyHS3                                             u:object_r:audio_device:s0
-/dev/vfsspi                                             u:object_r:vfsspi_device:s0
 
 # executeables
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service.apq8084               u:object_r:hal_sensors_default_exec:s0
@@ -60,9 +59,6 @@
 # sysfs - leds
 /sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/leds(/.*)?                              u:object_r:sysfs_leds:s0
 /sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/max[a-z0-9]+-led/leds(/.*)?             u:object_r:sysfs_leds:s0
-
-# sysfs - mdnie
-/sys/devices/virtual/mdnie/mdnie(/.*)?                  u:object_r:sysfs_mdnie:s0
 
 # sysfs - module parameters
 /sys/module/mhi_uci(/.*)?                               u:object_r:sysfs_modules:s0
