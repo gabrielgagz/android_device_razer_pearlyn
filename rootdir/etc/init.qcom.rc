@@ -795,7 +795,7 @@ on property:persist.usb.chgdisabled=0
 service qseecomd /vendor/bin/qseecomd
    class core
    user root
-   group root
+   group root drmrpc system
 
 service mpdecision /vendor/bin/mpdecision --avg_comp
    class main
