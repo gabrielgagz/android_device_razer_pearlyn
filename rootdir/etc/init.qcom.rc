@@ -32,22 +32,7 @@ import init.qcom.power.rc
 on early-init
     mkdir /firmware 0771 system system
     mkdir /firmware/image 0771 system system
-    
-    # Keymaster Fix
-    symlink /vendor/firmware/keymaster/keymaster.b00 /firmware/image/keymaster.b00
-    symlink /vendor/firmware/keymaster/keymaster.b01 /firmware/image/keymaster.b01
-    symlink /vendor/firmware/keymaster/keymaster.b02 /firmware/image/keymaster.b02
-    symlink /vendor/firmware/keymaster/keymaster.b03 /firmware/image/keymaster.b03
-    symlink /vendor/firmware/keymaster/keymaster.mdt /firmware/image/keymaster.mdt
-    
-    # Widevine Fix
-    symlink /vendor/firmware/widevine.b00 /firmware/image/widevine.b00
-    symlink /vendor/firmware/widevine.b01 /firmware/image/widevine.b01
-    symlink /vendor/firmware/widevine.b02 /firmware/image/widevine.b02
-    symlink /vendor/firmware/widevine.b03 /firmware/image/widevine.b03
-    symlink /vendor/firmware/widevine.mbn /firmware/image/widevine.mbn
-    symlink /vendor/firmware/widevine.mdt /firmware/image/widevine.mdt
-
+   
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
