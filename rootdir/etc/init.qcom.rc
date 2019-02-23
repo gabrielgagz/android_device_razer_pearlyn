@@ -603,7 +603,7 @@ service ftm_ffbm /system/bin/ftmdaemon
     disabled
     oneshot
 
-service cnss-daemon /system/bin/cnss-daemon -n -l
+service cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
