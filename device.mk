@@ -96,13 +96,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
-    $(LOCAL_PATH)/configs/permissions/tv_features.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/tv_features.xml \
-    $(LOCAL_PATH)/configs/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.qti.dpmframework.xml \
-    $(LOCAL_PATH)/configs/permissions/dpmapi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/dpmapi.xml \
-    $(LOCAL_PATH)/configs/permissions/android.hardware.type.television.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.type.television.xml \
-    $(LOCAL_PATH)/configs/permissions/ConnectivityExt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/ConnectivityExt.xml \
-    $(LOCAL_PATH)/configs/permissions/com.quicinc.cne.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.quicinc.cne.xml \
-    $(LOCAL_PATH)/configs/permissions/cneapiclient.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/cneapiclient.xml \
     $(LOCAL_PATH)/configs/permissions/nrdp.modelgroup.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/nrdp.modelgroup.xml
         
 # Wifi Config
