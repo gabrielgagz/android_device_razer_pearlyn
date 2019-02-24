@@ -71,7 +71,6 @@ on early-boot
     # Allow subsystem (modem etc) debugging
     # write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
     write /sys/kernel/boot_adsp/boot 1
-    exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
     
     # Load qcacld-2.0 wifi driver
     exec u:r:modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules wlan.ko	
@@ -399,19 +398,6 @@ on property:ro.board.platform=msm7630_fusion
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
-service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
-    class core
-    user root
-    oneshot
-
-service qcom-c_main-sh /system/bin/sh /init.class_main.sh
-    class main
-    user root
-    oneshot
-
-on property:vold.decrypt=trigger_restart_framework
-    start qcom-c_main-sh
-
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
@@ -631,11 +617,6 @@ on property:drmdiag.load=1
 on property:drmdiag.load=0
     stop drmdiag
 
-service qcom-sh /system/bin/sh /init.qcom.sh
-    class late_start
-    user root
-    oneshot
-
 service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
     class late_start
     group net_bt_admin inet radio wifi
@@ -693,14 +674,6 @@ service fastmmi /system/bin/mmi
     user root
     group root
     disabled
-
-service fastmmisrv /system/bin/sh /init.qcom.factory.sh
-    user root
-    disabled
-    oneshot
-
-on ffbm
-    start fastmmisrv
 
 service hvdcp /system/bin/hvdcp
     class core
@@ -844,10 +817,6 @@ service mdm_helper_proxy /system/bin/mdm_helper_proxy
     user system
     group system
     disabled
-
-service mdm_launcher /system/bin/sh /init.mdm.sh
-    class core
-    oneshot
 
 # Stop mdm_helper_proxy in case of shutdown
 on property:sys.shutdown.requested=*
