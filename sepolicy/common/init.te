@@ -6,6 +6,7 @@ selinux_check_context(init)
 
 allow init debugfs:file rw_file_perms;
 allow init sysfs_iio:lnk_file read;
+allow init debugfs_tracing_debug:dir mounton;
 allow init {
     sysfs_iio
     sysfs_sec_tsp
