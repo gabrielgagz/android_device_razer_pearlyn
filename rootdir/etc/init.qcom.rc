@@ -71,11 +71,8 @@ on early-boot
     # Allow subsystem (modem etc) debugging
     # write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
     write /sys/kernel/boot_adsp/boot 1
-    
-    # Load qcacld-2.0 wifi driver
-    exec u:r:modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules wlan.ko	
 	
-	// Init a dummy BT MAC address, will be overwritten later
+	# Init a dummy BT MAC address, will be overwritten later
     setprop ro.boot.btmacaddr 00:00:00:00:00:00
 
 on boot
