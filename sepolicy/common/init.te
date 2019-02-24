@@ -45,6 +45,7 @@ allow init {
 
 allow init {
     proc_printk
+    proc_rzr_filter
     sysfs_bluetooth_writable
     sysfs_cpu_boost
     sysfs_devices_system_cpu

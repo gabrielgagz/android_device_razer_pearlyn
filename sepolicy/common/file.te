@@ -29,3 +29,4 @@ type vfsspi_data_file, file_type, data_file_type;
 
 type proc_led_device, file_type;
 type proc_usb_device, file_type;
+type proc_rzr_filter, file_type;

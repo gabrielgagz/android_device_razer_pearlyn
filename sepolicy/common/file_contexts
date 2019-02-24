@@ -108,3 +108,4 @@
 # pearlyn specific
 /proc/led_device										u:object_r:proc_led_device:s0
 /proc/usb_device										u:object_r:proc_usb_device:s0
+/proc/rzr_filter										u:object_r:proc_rzr_filter:s0

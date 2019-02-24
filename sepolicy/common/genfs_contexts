@@ -1,3 +1,4 @@
 genfscon proc /bluetooth/sleep u:object_r:proc_bt_sleep:s0
 genfscon proc /usb_device u:object_r:proc_usb_device:s0
 genfscon proc /led_device u:object_r:proc_led_device:s0
+genfscon proc /rzr_filter u:object_r:proc_rzr_filter:s0
