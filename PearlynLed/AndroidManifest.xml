@@ -13,8 +13,8 @@
      limitations under the License.
 -->
 
-<manifest android:versionCode="1" android:versionName="1.0" package="org.lineageos.pearlynled" platformBuildVersionCode="25" platformBuildVersionName="7.1.2"
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="org.lineageos.pearlynled"
   android:sharedUserId="android.uid.system"
   coreApp="true">
  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
