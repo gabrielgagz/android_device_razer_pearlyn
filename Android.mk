@@ -56,11 +56,6 @@ $(shell mkdir -p $(TARGET_OUT)/vendor/firmware; \
 	ln -sf /system/etc/firmware/rampatch_tlv_2.1.tlv \
 		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_2.1.tlv;\
 	ln -sf /system/etc/firmware/rampatch_tlv_3.0.tlv \
-		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_3.0.tlv)
-		
-# Create link for libbt-vendor
-$(shell mkdir -p $(TARGET_OUT_VENDOR)/lib; \
-	ln -sf /system/vendor/lib/libbt-vendor.$(TARGET_BOARD_PLATFORM).so \
-		$(TARGET_OUT_VENDOR)/lib/libbt-vendor.so)		
+		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_3.0.tlv)	
 				
 endif
