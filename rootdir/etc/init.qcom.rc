@@ -186,11 +186,8 @@ on boot
 # Enable Razer filter for Serval Gamepad
     write /proc/rzr_filter 0 
     
-    # Enable writing to led blink node from userspace
-    chown system system /sys/class/leds/red/blink
-    chown system system /sys/class/leds/green/blink
-    # Enable writing to brightness node under torch-light from userspace
-    chown system system /sys/class/leds/torch-light/brightness
+    # Enable writing to led node from userspace
+    chown system system /sys/class/leds/lcd-backlight/brightness
     
     #Create PERFD deamon related dirs
     mkdir /data/misc/perfd 0755 root system

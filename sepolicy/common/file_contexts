@@ -49,7 +49,7 @@
 
 # sysfs - graphics/panel
 /sys/devices/[a-z0-9]+.qcom,mdss_mdp/caps                                                    u:object_r:sysfs_graphics:s0
-/sys/devices/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.[0-9]+(/.*)                        u:object_r:sysfs_graphics:s0
+/sys/devices/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_external.[0-9]+(/.*)                       u:object_r:sysfs_graphics:s0
 /sys/class/mhl(/.*)?                                                                         u:object_r:sysfs_graphics:s0
 /sys/devices/mdp\.[0-9](/.*)?                                                                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb0/csc_cfg                                                    u:object_r:sysfs_graphics:s0
