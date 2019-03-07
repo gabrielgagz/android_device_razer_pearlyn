@@ -1,6 +1,3 @@
-# block devices
-/dev/block/platform/msm_sdcc\.1/by-name/fota            u:object_r:misc_block_device:s0
-
 # data files
 /data/.cid.info                                         u:object_r:wifi_data_file:s0
 /data/.wifiver.info                                     u:object_r:wifi_data_file:s0
@@ -81,21 +78,6 @@
 # sysfs - net
 /sys/devices/msm_sdcc\.[0-9]/mmc_host/.*/net(/.*)?      u:object_r:sysfs_net:s0
 /sys/devices/virtual/net(/.*)?                          u:object_r:sysfs_net:s0
-
-# sysfs - sec
-/sys/devices/virtual/sec/bsp(/.*)?                      u:object_r:sysfs_sec_bsp:s0
-/sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_sec_led:s0
-/sys/devices/virtual/sec/sdcard(/.*)?                   u:object_r:sysfs_sec_sdcard:s0
-/sys/devices/virtual/sec/sec_barcode_emul(/.*)?         u:object_r:sysfs_sec_barcode_emul:s0
-/sys/devices/virtual/sec/sec_ir(/.*)?                   u:object_r:sysfs_sec_ir:s0
-/sys/devices/virtual/sec/sec_key(/.*)?                  u:object_r:sysfs_sec_key:s0
-/sys/devices/virtual/sec/sec_misc(/.*)?                 u:object_r:sysfs_sec_misc:s0
-/sys/devices/virtual/sec/sec_powerkey(/.*)?             u:object_r:sysfs_sec_powerkey:s0
-/sys/devices/virtual/sec/sec_touchkey(/.*)?             u:object_r:sysfs_sec_touchkey:s0
-/sys/devices/virtual/sec/switch(/.*)?                   u:object_r:sysfs_sec_switch:s0
-/sys/devices/platform/sec-thermistor(/.*)?              u:object_r:sysfs_sec_thermistor:s0
-/sys/devices/virtual/sec/tsp(/.*)?                      u:object_r:sysfs_sec_tsp:s0
-/sys/devices/virtual/sec/vib(/.*)?                      u:object_r:sysfs_sec_vib:s0
 
 # sysfs - sensors
 /sys/devices/virtual/sensors(/.*)?                      u:object_r:sysfs_sensors:s0
