@@ -56,8 +56,7 @@
 /sys/devices/virtual/graphics/fb0/pa														 u:object_r:sysfs_graphics:s0	
 
 # sysfs - leds
-/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/leds(/.*)?                              u:object_r:sysfs_leds:s0
-/sys/devices/i2c\.[0-9]+/i2c-[0-9]+/[0-9]+-[a-z0-9]+/max[a-z0-9]+-led/leds(/.*)?             u:object_r:sysfs_leds:s0
+/sys/devices/leds-qpnp-e6f58400/leds/pearlyn(/.*)?                               		 	 u:object_r:sysfs_leds:s0
 
 # sysfs - module parameters
 /sys/module/mhi_uci(/.*)?                               u:object_r:sysfs_modules:s0
