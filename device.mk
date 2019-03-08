@@ -207,8 +207,8 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_BOOTANIMATION_HALF_RES := true   
 
-# Treble packages
-$(call inherit-product, device/razer/pearlyn/treble.mk)     
+# Hidl packages
+$(call inherit-product, device/razer/pearlyn/hidl.mk)     
     
 # TWRP (optional)
 ifeq ($(WITH_TWRP),true)
