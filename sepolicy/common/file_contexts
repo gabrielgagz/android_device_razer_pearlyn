@@ -20,9 +20,6 @@
 # sockets
 /data/cam_socket.*                                      u:object_r:camera_socket:s0
 
-# sysfs - audio
-/sys/kernel/DualWave/sound/DUALWAVE_CONFIG              u:object_r:sysfs_audio:s0
-
 # sysfs - block/storage
 /sys/devices/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/mmc[0-9]:[0-9]+/block/mmcblk[0-9]/bkops_en    u:object_r:sysfs_io_sched_tuneable:s0
 /sys/devices/msm_sdcc\.[0-9]/mmc_host/mmc[0-9]/power(/.*)?                                   u:object_r:sysfs_mmc_host:s0
@@ -59,7 +56,6 @@
 /sys/devices/leds-qpnp-e6f58400/leds/pearlyn(/.*)?                               		 	 u:object_r:sysfs_leds:s0
 
 # sysfs - module parameters
-/sys/module/mhi_uci(/.*)?                               u:object_r:sysfs_modules:s0
 /sys/module/g_android(/.*)?                             u:object_r:sysfs_modules:s0
 /sys/module/rmnet_usb(/.*)?                             u:object_r:sysfs_modules:s0
 
