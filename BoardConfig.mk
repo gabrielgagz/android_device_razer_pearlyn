@@ -166,6 +166,9 @@ LZMA_RAMDISK_TARGETS := recovery
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# Fonts
+EXCLUDE_SERIF_FONTS := true
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
