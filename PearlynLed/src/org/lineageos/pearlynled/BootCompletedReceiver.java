@@ -27,18 +27,21 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, final Intent intent) {
+		
+		String action = intent.getAction();
+		
 		// Start the service on boot
-		if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+		if (Intent.ACTION_BOOT_COMPLETED.equals(action)) {
             Intent serviceIntent = new Intent(context, PearlynLedService.class);
             context.startService(serviceIntent);
             Log.i("PearlynLed","Started");
         // Shutdown the led if device goes to Daydream or Sleep   
-        } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF) || intent.getAction().equals(Intent.ACTION_DREAMING_STARTED)) {
+        } else if (Intent.ACTION_SCREEN_OFF.equals(action) || Intent.ACTION_DREAMING_STARTED.equals(action)) {
 			writeledvalue("1");
             wasScreenOn = false;
             Log.i("PearlynLed","Off"); 
         // Set the brightness to max if the devices wakes up from sleep or Daydream    
-        } else if (intent.getAction().equals(Intent.ACTION_SCREEN_ON) || intent.getAction().equals(Intent.ACTION_DREAMING_STOPPED)) {
+        } else if (Intent.ACTION_SCREEN_ON.equals(action) || Intent.ACTION_DREAMING_STOPPED.equals(action)) {
 			writeledvalue("255"); 
             wasScreenOn = true;
             Log.i("PearlynLed","On");
