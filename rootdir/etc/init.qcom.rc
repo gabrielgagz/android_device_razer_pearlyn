@@ -239,7 +239,7 @@ on fs
     
 on post-fs
     # Allow writing to the kernel trace log.
-    chmod 0222 /sys/kernel/debug/tracing/trace_marker             
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker                          
 
 # msm specific files that need to be created on /data
 on post-fs-data
