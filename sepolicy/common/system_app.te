@@ -1,2 +1,4 @@
 # PearlynLed
 allow system_app proc_led_device:file { getattr open write };
+
+allow system_app sensors_prop:file r_file_perms;
