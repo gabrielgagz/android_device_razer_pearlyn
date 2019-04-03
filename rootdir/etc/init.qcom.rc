@@ -51,6 +51,8 @@ on init
     chmod 0600 /sys/class/graphics/fb0/cec/wr_msg
     chown system graphics /sys/class/graphics/fb0/hpd
     chmod 0664 /sys/class/graphics/fb0/hpd
+    chown system graphics /sys/class/graphics/fb0/idle_time
+    chmod 0664 /sys/class/graphics/fb0/hpd
     chown system graphics /sys/class/graphics/fb0/vendor_name
     chmod 0664 /sys/class/graphics/fb0/vendor_name
     chown system graphics /sys/class/graphics/fb0/product_description
