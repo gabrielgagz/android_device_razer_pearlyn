@@ -8,7 +8,6 @@ type sysfs_modules, fs_type, sysfs_type;
 type sysfs_hal_pwr, fs_type, sysfs_type;
 type sysfs_msm, fs_type, sysfs_type;
 type sysfs_usb_otg, fs_type, sysfs_type;
-type sysfs_usb_storage_gadget, fs_type, sysfs_type;
 
 type bt_fw_file, file_type;
 
