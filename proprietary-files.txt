@@ -1,5 +1,5 @@
 # ADSP
-bin/adsprpcd
+vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
@@ -30,9 +30,6 @@ etc/acdbdata/MTP/MTP_Headset_cal.acdb
 etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 
 # Audio
-lib/libaudiopolicyenginedefault.so
-lib/libaudiopolicymanager.so
-lib/libaudiopolicymanagerdefault.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
@@ -46,10 +43,9 @@ vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 
 # Bluetooth
-bin/btnvtool
-bin/btnvtool_razer
-bin/hci_qcomm_init
-bin/wcnss_filter
+vendor/bin/btnvtool
+vendor/bin/hci_qcomm_init
+vendor/bin/wcnss_filter|4e7e307215ced94047501131870b7cf65546adc5
 vendor/lib/libbtnv.so
 
 # Bluetooth Firmware
@@ -63,7 +59,7 @@ etc/firmware/rampatch_tlv_2.1.tlv
 etc/firmware/rampatch_tlv_3.0.tlv
 
 # DRM
-bin/qseecomd
+vendor/bin/qseecomd
 bin/qseecom_sample_client
 vendor/lib/drm/libdrmprplugin.so
 vendor/lib/drm/libdrmwvmplugin.so
@@ -167,11 +163,10 @@ vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-abl.so
 
 # Power
-bin/mpdecision
-framework/QPerformance.jar
+vendor/bin/mpdecision|ac43d0545da823a8cec059bf31fe4c3b7fff6c6b
 lib/libqti_performance.so
 vendor/bin/thermal-engine
-vendor/lib/libqc-opt.so
+vendor/lib/libqc-opt.so|4ad4c9bfd1b7e10d863726213c80c4162aee19d4
 vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
@@ -197,18 +192,17 @@ vendor/lib/libsmemlog.so
 vendor/lib/libsensor1.so
 
 # Time Services
-app/TimeService/TimeService.apk
+app/TimeService/TimeService.apk|f6c898ec66b57ebfe891c9e3598f95234f205ca0
 vendor/lib/libtime_genoff.so
-bin/time_daemon
+vendor/bin/time_daemon|8b60d1acbdfe941ceb16ebd6fa98a8fc34a08bfe
 vendor/lib/libTimeService.so
 
 # Wifi
-bin/cnss-daemon
+vendor/bin/cnss-daemon
 bin/cnss_diag
 lib/libiw.so
 
 # Wifi Firmware
-etc/firmware/wlan/qca_cld/WCNSS_cfg.dat
 vendor/firmware/bdwlan11.bin
 vendor/firmware/bdwlan20.bin
 vendor/firmware/otp11.bin
@@ -298,7 +292,7 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
 # Radio
-bin/cnd
+vendor/bin/cnd
 bin/dpmd
 bin/efsks
 bin/ks
@@ -311,12 +305,6 @@ bin/qmuxd
 bin/radish
 bin/ssr_diag
 bin/subsystem_ramdump
-framework/cneapiclient.jar
-framework/com.qti.dpmframework.jar
-framework/com.quicinc.cne.jar
-framework/ConnectivityExt.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneconn.so
@@ -354,21 +342,11 @@ vendor/lib/libqomx_jpegenc.so
 # Media
 lib/libextmedia_jni.so
 
-# Audio Config
-vendor/etc/audio_effects.conf
-
-# qcom wifi display
-bin/wdsdaemon
-framework/WfdCommon.jar
-vendor/lib/libwfdcommonutils.so
-
 # Misc files
-bin/ATFWD-daemon
 bin/athdiag
 bin/dun-server
 bin/ethtool
 bin/ftmdaemon
-bin/hal_proxy_daemon
 bin/iwconfig
 bin/iwlist
 bin/iwpriv
@@ -379,7 +357,6 @@ bin/pktlogconf
 bin/PktRspTest
 bin/ptt_socket_app
 bin/test_diag
-framework/oem-services.jar
 lib/libantradio.so
 lib/libgoogle_tagger_aah_jni.so
 vendor/lib/libuhid.so
