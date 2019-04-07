@@ -80,6 +80,7 @@
 # sysfs - usb
 /sys/devices/[a-f0-9]+.ssusb/[a-f0-9]+.dwc3/gadget/lun[0-9]+(/.*)?                           u:object_r:sysfs_android_usb:s0
 /sys/devices/virtual/host_notify/usb_otg(/.*)?                                               u:object_r:sysfs_usb_otg:s0
+/sys/devices/f9200000.ssusb/power_supply/usb(/.*)?											 u:object_r:sysfs_usb_supply:s0
 
 # pearlyn specific
 /proc/led_device										u:object_r:proc_led_device:s0
