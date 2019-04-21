@@ -45,7 +45,7 @@ vendor/lib/soundfx/libqcvirt.so
 # Bluetooth
 vendor/bin/btnvtool
 vendor/bin/hci_qcomm_init
-vendor/bin/wcnss_filter|4e7e307215ced94047501131870b7cf65546adc5
+vendor/bin/wcnss_filter
 vendor/lib/libbtnv.so
 
 # Bluetooth Firmware
