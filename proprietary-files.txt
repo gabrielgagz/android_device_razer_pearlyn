@@ -86,6 +86,9 @@ vendor/lib/mediadrm/libprmediadrmdecrypt.so
 vendor/lib/mediadrm/libprmediadrmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
+# HDMI
+vendor/lib/libhdmi.so|f5bc188e0bb1979d13eb971f882727441b6f822e
+
 # Graphics
 lib/libGLES_trace.so
 vendor/lib/egl/eglSubDriverAndroid.so
