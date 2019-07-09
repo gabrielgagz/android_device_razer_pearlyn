@@ -3,7 +3,6 @@ ro.hdmi.enable=true
 ro.hdmi.device_type=4
 persist.sys.hdmi.addr.playback=4
 persist.demo.hdmirotationlock=false
-persist.sys.hdmi.keep_awake=false
 
 # Model Group
 ro.nrdp.modelgroup=FORGETV
