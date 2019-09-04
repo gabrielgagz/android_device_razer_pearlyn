@@ -38,9 +38,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/Vendor_2836_Product_0001.kl:system/usr/keylayout/Vendor_2836_Product_0001.kl \
     $(LOCAL_PATH)/configs/keylayout/Vendor_045e_Product_02fd.kl:system/usr/keylayout/Vendor_045e_Product_02fd.kl
     
+# Fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_SYSTEM)/etc/fstab.qcom \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom    
+    
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
