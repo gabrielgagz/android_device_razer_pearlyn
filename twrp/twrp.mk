@@ -1,6 +1,9 @@
 # TWRP
 RECOVERY_VARIANT := twrp
-TW_THEME := landscape_hdpi
+TW_THEME := landscape_mdpi
 TW_NO_SCREEN_TIMEOUT := true
 TW_NO_BATT_PERCENT := true
 TW_USE_TOOLBOX := true
+TW_NO_HAPTICS := true
+TW_EXCLUDE_MTP := true
+TW_NO_EXFAT_FUSE := true
