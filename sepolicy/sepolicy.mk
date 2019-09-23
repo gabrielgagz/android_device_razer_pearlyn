@@ -14,8 +14,7 @@
 # limitations under the License.
 #
 
-include device/qcom/sepolicy-legacy/sepolicy.mk
-
 # Board specific SELinux policy variable definitions
 BOARD_SEPOLICY_DIRS += \
+	device/qcom/sepolicy/legacy/vendor/common \
     device/razer/pearlyn/sepolicy/common
