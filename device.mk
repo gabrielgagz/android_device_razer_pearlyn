@@ -35,6 +35,9 @@ PRODUCT_CHARACTERISTICS := nosdcard,tv
 # APEX
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
+    
+# Shippig API
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)    
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -123,7 +126,6 @@ PRODUCT_COPY_FILES += \
 # Build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-swap=false \
-	ro.product.first_api_level=22 \
 	ro.com.google.clientidbase=android-pearlyn \
 	ro.sf.lcd_density=320
 	
