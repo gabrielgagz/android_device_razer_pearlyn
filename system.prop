@@ -93,3 +93,6 @@ wifi.direct.non-concurrent=true
 
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
+
+# Surfaceflinger
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
