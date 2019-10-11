@@ -28,13 +28,9 @@
 import init.trace.rc
 import init.qcom.usb.rc
 import init.qcom.power.rc
-
-on early-init
-    mkdir /firmware 0771 system system
    
 on init
     # Set permissions for persist partition
-    mkdir /persist 0771 system system
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /storage/sdcard1 0700 root root
 
