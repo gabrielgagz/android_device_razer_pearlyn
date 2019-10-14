@@ -1,6 +1,0 @@
-genfscon proc /bluetooth/sleep u:object_r:proc_bt_sleep:s0
-genfscon proc /usb_device u:object_r:proc_usb_device:s0
-genfscon proc /led_device u:object_r:proc_led_device:s0
-genfscon proc /rzr_filter u:object_r:proc_rzr_filter:s0
-genfscon proc /sys/kernel/printk u:object_r:proc_printk:s0
-genfscon proc /sys/kernel/boot_reason u:object_r:proc_boot_reason:s0

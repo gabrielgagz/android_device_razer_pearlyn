@@ -1,9 +1,0 @@
-allow system_server {
-    mpctl_data_file
-}:dir search;
-
- allow system_server {
-    qti_debugfs
-}:file r_file_perms;
-
-allow system_server qdisplay_service:service_manager { add find };

@@ -1,2 +1,0 @@
-allow toolbox init:fifo_file { read write getattr };
-allow toolbox rmnet_mux_prop:file r_file_perms;
