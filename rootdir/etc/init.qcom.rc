@@ -202,7 +202,7 @@ on fs
 
 	wait /dev/block/platform/${ro.boot.bootdevice}
     symlink /dev/block/platform/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom
+    mount_all /vendor/etc/fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
@@ -727,7 +727,7 @@ on property:ro.build.type=user
     rm /dev/diag
 
 on property:sys.boot_completed=1
-	swapon_all fstab.qcom
+	swapon_all /vendor/etc/fstab.qcom
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
