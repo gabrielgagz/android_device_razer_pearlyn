@@ -34,6 +34,7 @@ debug.enable.sglscale=1
 debug.hwui.use_buffer_age=false
 debug.sf.enable_gl_backpressure=1
 debug.sf.latch_unsignaled=1
+debug.hwui.renderer=opengl
 
 # Audio
 ro.vendor.audio.sdk.fluencetype=none
