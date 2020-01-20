@@ -57,5 +57,10 @@ $(shell mkdir -p $(TARGET_OUT)/vendor/firmware; \
 		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_2.1.tlv;\
 	ln -sf /system/etc/firmware/rampatch_tlv_3.0.tlv \
 		$(TARGET_OUT)/vendor/firmware/rampatch_tlv_3.0.tlv)	
+		
+# Create links for product/media/audio some old apps use the old path if file not there the app crash
+$(shell mkdir -p $(TARGET_OUT)/media; \
+	ln -sf ../product/media/audio/ \
+		$(TARGET_OUT)/media/audio)		
 				
 endif
