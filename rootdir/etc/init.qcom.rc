@@ -25,9 +25,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.trace.rc
-import init.qcom.usb.rc
-import init.qcom.power.rc
+import /system/vendor/etc/init/hw/init.trace.rc
+import /system/vendor/etc/init/hw/init.qcom.usb.rc
+import /system/vendor/etc/init/hw/init.qcom.power.rc
    
 on init
     # Set permissions for persist partition
