@@ -193,7 +193,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	cplay \
 	hostapd \
-	rmnetcli \
 	setup_fs \
 	tinycap \
 	tinypcminfo \
