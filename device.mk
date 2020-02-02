@@ -31,10 +31,6 @@ DEVICE_PACKAGE_OVERLAYS += device/razer/pearlyn/overlay
 PRODUCT_AAPT_CONFIG := large xlarge
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard,tv
-
-# APEX
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
     
 # Shippig API
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)    
